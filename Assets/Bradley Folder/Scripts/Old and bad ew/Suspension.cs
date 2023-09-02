@@ -7,8 +7,23 @@ public class Suspension : MonoBehaviour
     public Rigidbody car;
     public Transform frontRightTire, frontLeftTire, backRightTire, backLeftTire;
     public Ray rayFRT, rayFLT, rayBRT, rayBLT;
+
+    //Suspension
+    //force = offset x strength
     public float suspensionForce = 1f;
     public float suspensionLength = 1f;
+    public float suspensionOffset = 1f;
+    //dampening
+    // force = -(velocity x damping)
+    public float suspensionVelocity;
+    public float damper = 1f;
+    //full spring calc
+    // force = (offset x strength) - (velocity x damping)
+
+
+    //wheel
+    public float maxWheelTurn = 35f;
+
     public float acceleration = 10f;
     public float turnSpeed = 2f;
 
@@ -36,10 +51,17 @@ public class Suspension : MonoBehaviour
         Vector2 inputVector = inputActions.VehicleMovement.Forward.ReadValue<Vector2>();
         car.AddForce(transform.forward * inputVector.y * acceleration, ForceMode.Force);
         //car.AddForce(new Vector3(inputVector.x * 0, 0, inputVector.y) * acceleration, ForceMode.Acceleration);
-        playerCar.transform.Rotate(new Vector3(0, inputVector.x*turnSpeed, 0));
+        playerCar.transform.Rotate(new Vector3(0, inputVector.x * turnSpeed, 0));
 
 
     }
+
+    public void rotateWheels()
+    {
+        //frontRightTire.transform.Rotate();
+    }
+
+
 
     public void suspend()
     {
@@ -47,22 +69,38 @@ public class Suspension : MonoBehaviour
         rayFLT = new Ray(frontLeftTire.transform.position, -transform.up);
         rayBRT = new Ray(backRightTire.transform.position, -transform.up);
         rayBLT = new Ray(backLeftTire.transform.position, -transform.up);
-        if (Physics.Raycast(rayFRT, out RaycastHit hitFR, suspensionLength))
+
+        if (Physics.Raycast(rayFRT, out RaycastHit hitFR))
         {
-            car.AddForce(frontRightTire.transform.up * suspensionForce);
+            Vector3 sprintDirection = frontRightTire.up;
         }
-        if (Physics.Raycast(rayFLT, out RaycastHit hitFL, suspensionLength))
+
+
+
+        if (true)
         {
-            car.AddForce(frontLeftTire.transform.up * suspensionForce);
+            //        rayFRT = new Ray(frontRightTire.transform.position, -transform.up);
+            //        rayFLT = new Ray(frontLeftTire.transform.position, -transform.up);
+            //        rayBRT = new Ray(backRightTire.transform.position, -transform.up);
+            //        rayBLT = new Ray(backLeftTire.transform.position, -transform.up);
+            //if (Physics.Raycast(rayFRT, out RaycastHit hitFR, suspensionLength))
+            //{
+            //    car.AddForce(frontRightTire.transform.up * suspensionForce);
+            //}
+            //if (Physics.Raycast(rayFLT, out RaycastHit hitFL, suspensionLength))
+            //{
+            //    car.AddForce(frontLeftTire.transform.up * suspensionForce);
+            //}
+            //if (Physics.Raycast(rayBRT, out RaycastHit hitBR, suspensionLength))
+            //{
+            //    car.AddForce(backRightTire.transform.up * suspensionForce);
+            //}
+            //if (Physics.Raycast(rayBLT, out RaycastHit hitBL, suspensionLength))
+            //{
+            //    car.AddForce(backLeftTire.transform.up * suspensionForce);
+            //}
         }
-        if (Physics.Raycast(rayBRT, out RaycastHit hitBR, suspensionLength))
-        {
-            car.AddForce(backRightTire.transform.up * suspensionForce);
-        }
-        if (Physics.Raycast(rayBLT, out RaycastHit hitBL, suspensionLength))
-        {
-            car.AddForce(backLeftTire.transform.up * suspensionForce);
-        }
+
 
         //Legacy bad versioon booooooo!!
         //if (car.transform.position.y <= suspensionLength)
