@@ -545,7 +545,6 @@ Transform:
   m_Children:
   - {fileID: 1130431155}
   - {fileID: 15039931}
-  - {fileID: 1087012726}
   - {fileID: 163086103}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -676,21 +675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d09b899fdf748045a8e724c8381461f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCar: {fileID: 692198130}
-  car: {fileID: 692198134}
-  frontRightTire: {fileID: 2099564297}
-  frontLeftTire: {fileID: 650552075}
-  backRightTire: {fileID: 1798333193}
-  backLeftTire: {fileID: 252076951}
-  suspensionForce: 50
-  suspensionLength: 0.8
-  suspensionOffset: 1
-  suspensionVelocity: 0
-  damper: 1
-  maxWheelTurn: 35
-  acceleration: 500
-  turnSpeed: 1.32
-  playerInput: {fileID: 1071105347}
 --- !u!54 &692198134
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1344,7 +1328,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071105345}
   serializedVersion: 4
-  m_Mass: 8
+  m_Mass: 10
   m_Drag: 3
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1466,7 +1450,7 @@ Transform:
   - {fileID: 1345509081}
   - {fileID: 56282229}
   - {fileID: 1071105346}
-  m_Father: {fileID: 416185407}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1099041257
 GameObject:
@@ -2333,21 +2317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e34c02c27ef3142aebb6a3b6145fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCar: {fileID: 1824939165}
-  car: {fileID: 1824939170}
-  frontRightTire: {fileID: 945063580}
-  frontLeftTire: {fileID: 1722289256}
-  backRightTire: {fileID: 756543462}
-  backLeftTire: {fileID: 1179862174}
-  suspensionForce: 50
-  suspensionLength: 0.8
-  suspensionOffset: 1
-  suspensionVelocity: 0
-  damper: 1
-  maxWheelTurn: 35
-  acceleration: 500
-  turnSpeed: 1.32
-  playerInput: {fileID: 1824939172}
 --- !u!114 &1824939172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2443,15 +2412,15 @@ MonoBehaviour:
   tireTrans: {fileID: 0}
   playerInput: {fileID: 1071105347}
   isLeftTire: 1
-  suspensionStrength: 85
-  damper: 15
-  tireGrip: 0.5
+  suspensionStrength: 100
+  damper: 10
+  tireGrip: 0.8
   tireMass: 1
-  wheelBase: 2.6
-  rearTrack: 1.5
+  wheelBase: 2.66954
+  rearTrack: 1.25
   turnRad: 5
   givePower: 0
-  a: 150
+  a: 200
 --- !u!1 &1833582448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,15 +2470,15 @@ MonoBehaviour:
   tireTrans: {fileID: 0}
   playerInput: {fileID: 1071105347}
   isLeftTire: 0
-  suspensionStrength: 85
-  damper: 15
-  tireGrip: 0.5
+  suspensionStrength: 100
+  damper: 10
+  tireGrip: 0.8
   tireMass: 1
-  wheelBase: 2.6
-  rearTrack: 1.5
+  wheelBase: 2.66954
+  rearTrack: 1.25
   turnRad: 5
   givePower: 1
-  a: 150
+  a: 200
 --- !u!1 &1931767139
 GameObject:
   m_ObjectHideFlags: 3
@@ -2656,15 +2625,15 @@ MonoBehaviour:
   tireTrans: {fileID: 0}
   playerInput: {fileID: 1071105347}
   isLeftTire: 1
-  suspensionStrength: 85
-  damper: 15
-  tireGrip: 0.5
+  suspensionStrength: 100
+  damper: 10
+  tireGrip: 0.8
   tireMass: 1
-  wheelBase: 2.6
-  rearTrack: 1.5
+  wheelBase: 2.66954
+  rearTrack: 1.25
   turnRad: 5
   givePower: 1
-  a: 150
+  a: 200
 --- !u!1 &2015691364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,19 +2841,20 @@ MonoBehaviour:
   tireTrans: {fileID: 0}
   playerInput: {fileID: 1071105347}
   isLeftTire: 0
-  suspensionStrength: 85
-  damper: 15
-  tireGrip: 0.5
+  suspensionStrength: 100
+  damper: 10
+  tireGrip: 0.8
   tireMass: 1
-  wheelBase: 2.6
-  rearTrack: 1.5
+  wheelBase: 2.66954
+  rearTrack: 1.25
   turnRad: 5
   givePower: 0
-  a: 150
+  a: 200
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 172327775}
+  - {fileID: 1087012726}
   - {fileID: 416185407}
   - {fileID: 1364126803}
