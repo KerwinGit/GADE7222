@@ -78,7 +78,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in text)
         {
             dialogueText.text += letter;
-            yield return null; // Add a slight delay for typing effect
+            yield return new WaitForSeconds(0.05f); // Add a slight delay for typing effect
         }
     }
 
