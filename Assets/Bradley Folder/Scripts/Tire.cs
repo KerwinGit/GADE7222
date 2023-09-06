@@ -27,17 +27,16 @@ public class Tire : MonoBehaviour
     // force = (offset x strength) - (velocity x damping)
     // Start is called before the first frame update
 
-    [Header("Steering")]
+    [Header("Steering + Traction")]
     //acceleration = deltaV/time
     //public float slideCounter;
-    //public AnimationCurve tireGrip;
-    public float tireGrip = 1f;
-    public float tireMass = 1f;
+    public AnimationCurve tireGrip;
+    //public float tireGrip = 1f;
 
+    public float tireMass = 1f;
     //using ackerman angles
     private float turnAngleLeft;
     private float turnAngleRight;
-
     private float tireAngle;
     public float wheelBase;
     public float rearTrack;
@@ -47,7 +46,8 @@ public class Tire : MonoBehaviour
     [Header("Acceleration")]
     //public AnimationCurve speedCurve;
     public bool givePower = false;
-    public float a;
+    public float accel = 200;
+    public AnimationCurve a;
 
     private void Awake()
     {
@@ -67,7 +67,7 @@ public class Tire : MonoBehaviour
         Suspend();
         Steer();
         Vector2 inputVector = inputActions.VehicleMovement.Forward.ReadValue<Vector2>();
-        carRB.AddForceAtPosition(tireTrans.forward * inputVector.y * a, tireTrans.position);
+        carRB.AddForceAtPosition(tireTrans.forward * inputVector.y * accel * a.Evaluate(carRB.velocity.magnitude), tireTrans.position);
 
 
     }
@@ -132,7 +132,7 @@ public class Tire : MonoBehaviour
 
             float velocity = Vector3.Dot(steerDirection, tireVelocity);
 
-            float deltaV = -velocity * tireGrip;
+            float deltaV = -velocity * tireGrip.Evaluate(carRB.velocity.magnitude);
 
             float acceleration = deltaV / Time.fixedDeltaTime;
             carRB.AddForceAtPosition(steerDirection * tireMass * acceleration, tireTrans.position);
