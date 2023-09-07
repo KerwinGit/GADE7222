@@ -4,94 +4,111 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEditor.UI;
 using TMPro;
+using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    private static DialogueManager instance;
-    public static DialogueManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<DialogueManager>();
-                if (instance == null)
-                {
-                    GameObject obj = new GameObject("DialogueManager");
-                    instance = obj.AddComponent<DialogueManager>();
-                }
-            }
-            return instance;
-        }
-    }
 
-    private Queue<string> nameQueue = new Queue<string>();
-    private Queue<string> dialogueQueue = new Queue<string>();
+    public Queue<string> dialogueQueue = new Queue<string>();
+    public Queue<string> nameQueue = new Queue<string>();
+    public Queue<Sprite> portraitQueue = new Queue<Sprite>();
 
-    public DialogueSO dialogueSO;
-
+    [Header("References")]
+    public DialogueDataSO dialogueDataSO;    
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private UnityEngine.UI.Image portraitImage;
+    [SerializeField] private Button continueBtn;
 
     private string charName;
     private string dialogue;
+    private Sprite charPortrait;
+
+    private Scene currentScene;
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (dialogueDataSO != null)
         {
-            Destroy(this.gameObject);
-            return;
-        }
-        instance = this;
-
-        // Populate the queue from the ScriptableObject
-        if (dialogueSO != null)
-        {
-            dialogueQueue.Clear();
-            dialogueQueue = new Queue<string>(dialogueSO.dialogueLines);
-            nameQueue = new Queue<string>(dialogueSO.names);
+            foreach (var entry in dialogueDataSO.dialogueEntries)
+            {
+                dialogueQueue.Enqueue(entry.dialogueLine);
+                nameQueue.Enqueue(entry.characterName);
+                portraitQueue.Enqueue(entry.charPortrait);
+            }
         }
 
-        StartDialogue();
+        LoadDialogueData();
     }
 
-    private void StartDialogue()
+    private string GetNextDialogue()
     {
-        if (dialogueQueue.Count > 0)
+        if (!dialogueQueue.IsEmpty())
         {
-            string dialogue = dialogueQueue.Dequeue();
-            charName = nameQueue.Dequeue();
-            StartCoroutine(TypeDialogue(dialogue));
+            return dialogueQueue.Dequeue();
         }
-        else
+        return null;
+    }
+
+    private string GetNextCharacterName()
+    {
+        if (!nameQueue.IsEmpty())
         {
-            // Dialogue is finished
-            Debug.Log("Dialogue is finished.");
+            return nameQueue.Dequeue();
         }
+        return null;
+    }
+
+    private Sprite GetNextCharacterSprite()
+    {
+        if (!portraitQueue.IsEmpty())
+        {
+            return portraitQueue.Dequeue();
+        }
+        return null;
+    }
+
+    private void LoadDialogueData()
+    {
+        charName = GetNextCharacterName();
+        dialogue = GetNextDialogue();
+        charPortrait = GetNextCharacterSprite();
+
+        StartCoroutine(TypeDialogue(dialogue));
     }
 
     private IEnumerator TypeDialogue(string text)
     {
+        continueBtn.interactable = false;       
+
         nameText.text = charName;
         dialogueText.text = "";
+        portraitImage.sprite = charPortrait;
         foreach (char letter in text)
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(0.05f); // Add a slight delay for typing effect
         }
+
+        continueBtn.interactable = true;
     }
 
-    public void ContinueDialogue()
+    public void ContinueClicked()
     {
-        if (dialogueQueue.Count > 0)
+        if(!dialogueQueue.IsEmpty())
         {
-            StartDialogue();
+            LoadDialogueData();
         }
         else
         {
-            // Dialogue is finished
-            Debug.Log("Dialogue is finished.");
+            currentScene = SceneManager.GetActiveScene();
+
+            switch(currentScene.buildIndex)
+            {
+                case 0: SceneManager.LoadScene(1);break;
+            }
         }
     }
 

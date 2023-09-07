@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CheckPointRaceDialogue.unity
+    guid: ae10122c37919bf469f7da4b16cf01a0
+  - enabled: 1
+    path: Assets/Scenes/BeginnerRaceDialogue.unity
+    guid: c4818e118a4ad6749a7aa82808d5bb5f
   m_configObjects: {}
