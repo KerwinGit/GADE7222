@@ -13,26 +13,26 @@ MonoBehaviour:
   m_Name: CheckpointDialogueSO
   m_EditorClassIdentifier: 
   dialogueEntries:
-  - characterName: Mario
-    dialogueLine: It's-a-me, Mario!
-    charPortrait: {fileID: 21300000, guid: 295dc5b69f062494fb37b0724781164a, type: 3}
-  - characterName: Luigi
-    dialogueLine: Mamma-mia!
-    charPortrait: {fileID: 21300000, guid: 4825d0f53a37178449d8e0913515f810, type: 3}
-  - characterName: Mario
-    dialogueLine: What's wrong, Luigi?
-    charPortrait: {fileID: 21300000, guid: 295dc5b69f062494fb37b0724781164a, type: 3}
-  - characterName: Luigi
-    dialogueLine: 'Look at all those checkpoints
-
-      How is our driver gonna ever
-      get through them all?'
-    charPortrait: {fileID: 21300000, guid: 4825d0f53a37178449d8e0913515f810, type: 3}
-  - characterName: Mario
-    dialogueLine: 'Don''t worry!
-
-      You''ve got this, buddy!'
-    charPortrait: {fileID: 21300000, guid: 295dc5b69f062494fb37b0724781164a, type: 3}
-  - characterName: Mario
-    dialogueLine: Get driving!
-    charPortrait: {fileID: 21300000, guid: 295dc5b69f062494fb37b0724781164a, type: 3}
+  - characterName: Jovvy
+    dialogueLine: Yo eddy my guy, you see those pillars of light?
+    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
+  - characterName: Edward
+    dialogueLine: Yeah what about em?
+    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+  - characterName: Jovvy
+    dialogueLine: You see how one of 'em is green?
+    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
+  - characterName: Edward
+    dialogueLine: I already know what you're gonna say... LETS DRIVE AT THEM REAL
+      SPEEDY LIKE!
+    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+  - characterName: Jovvy
+    dialogueLine: That wasn't even close... but I like that idea better, lets do
+      it.
+    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
+  - characterName: Edward
+    dialogueLine: What was you're idea?
+    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+  - characterName: Jovvy
+    dialogueLine: Don't worry 'bout it. LETS GO!
+    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}

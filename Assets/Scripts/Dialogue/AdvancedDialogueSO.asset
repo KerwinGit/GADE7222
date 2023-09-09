@@ -10,23 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd188c0b83245764a90e8c0c5d5a6ef0, type: 3}
-  m_Name: BeginnerDialogueSO
+  m_Name: AdvancedDialogueSO
   m_EditorClassIdentifier: 
   dialogueEntries:
-  - characterName: Edward
-    dialogueLine: Wanna ram into more pillars of light?
-    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
   - characterName: Jovvy
-    dialogueLine: Nah, but I hear theres this exclusive group of racers. I say we
-      got a shot at joining. They got some crazy race tracks.
+    dialogueLine: Alright we made it into the big leagues.
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
   - characterName: Edward
-    dialogueLine: Alright, so lets join and race 'em.
+    dialogueLine: Well, can't say I didn't expect it but i guess we can celebrate.
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
   - characterName: Jovvy
-    dialogueLine: Woah so eager, we should probably practice a bit first. Race some
-      people on a straight forward course?
+    dialogueLine: No celebrating yet, check out that race course... look at those
+      different paths. We can't let our guards down.
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
   - characterName: Edward
-    dialogueLine: Yeah i guess... I'll round up some people to race.
+    dialogueLine: Stop speaking like a nerd and get in the car
+    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+  - characterName: Jovvy
+    dialogueLine: C'mon man, I was just trying to-
+    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
+  - characterName: Edward
+    dialogueLine: Yeah yeah, whatever man lets school these fools.
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}

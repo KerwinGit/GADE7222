@@ -3,26 +3,31 @@ using UnityEngine.InputSystem;
 
 public class Tire : MonoBehaviour
 {
+    //appologies for spelling tyres as tires and then also sometimes tyres, all the code is probably tires tho
+
     [Header("Extras")]
-    public GameObject car;
-    public Rigidbody carRB;
-    public Transform tireTrans;
-    public Ray tireRay;
+    public GameObject car; //car game object
+    public Rigidbody carRB; //car rigidbody
+    public Transform tireTrans; //tire transform
+    public Ray tireRay; //raycast projected from tire location
     public InputActions inputActions;
     public PlayerInput playerInput;
     public bool isLeftTire = false;
+
+    public float carMaxVelocity = 30f; //the car's max velocity
+    public float carVelocityPercentage; //percentage of the max velocity the car is currently moving
 
 
 
     [Header("Suspension")]
     //Suspension
     //force = offset x strength
-    public float suspensionStrength = 1f;
-    private float suspensionLength = 1f;
+    public float suspensionStrength = 1f;   //strength of the spring
+    private float suspensionLength = 1f;    //length of the suspension
     //dampening
     // force = -(velocity x damping)
     private float suspensionVelocity;
-    public float damper = 1f;
+    public float damper = 1f;   //force that acts against spring/suspension force to slow down movement and make smoother
     //full spring calc
     // force = (offset x strength) - (velocity x damping)
     // Start is called before the first frame update
@@ -35,19 +40,19 @@ public class Tire : MonoBehaviour
 
     public float tireMass = 1f;
     //using ackerman angles
-    private float turnAngleLeft;
-    private float turnAngleRight;
-    private float tireAngle;
-    public float wheelBase;
-    public float rearTrack;
-    public float turnRad;
+    private float turnAngleLeft;    //angle of the left tyre
+    private float turnAngleRight;   //angle of the right tyre
+    private float tireAngle;        //max angle the tyre will turn
+    public float wheelBase; //width of tire
+    public float rearTrack; //distance from middle of vehicle to the tyre
+    public float turnRad;   //turn radius
 
 
     [Header("Acceleration")]
     //public AnimationCurve speedCurve;
-    public bool givePower = false;
-    public float accel = 200;
-    public AnimationCurve a;
+    public bool givePower = false;  //if the tire turns and moves car forward
+    public float accel = 200;       //Acceleration
+    public AnimationCurve a;        //the graph that determines how much power acceleration power is given to the tires based on vehicle speed
 
     private void Awake()
     {
@@ -59,7 +64,9 @@ public class Tire : MonoBehaviour
     }
     void Update()
     {
+        //handles rotating the tyres
         tireTrans.localRotation = Quaternion.Euler(tireTrans.localRotation.x, tireTrans.localRotation.y + tireAngle, tireTrans.localRotation.z);
+        carVelocityPercentage = carRB.velocity.magnitude/carMaxVelocity;
     }
 
     private void FixedUpdate()
@@ -67,7 +74,7 @@ public class Tire : MonoBehaviour
         Suspend();
         Steer();
         Vector2 inputVector = inputActions.VehicleMovement.Forward.ReadValue<Vector2>();
-        carRB.AddForceAtPosition(tireTrans.forward * inputVector.y * accel * a.Evaluate(carRB.velocity.magnitude), tireTrans.position);
+        carRB.AddForceAtPosition(tireTrans.forward * inputVector.y * accel * a.Evaluate(carVelocityPercentage), tireTrans.position);
 
 
     }
@@ -78,8 +85,8 @@ public class Tire : MonoBehaviour
 
 
 
-
-        if (Physics.Raycast(tireRay, out RaycastHit hitTire))
+        
+        if (Physics.Raycast(tireRay, out RaycastHit hitTire, 4))
         {
             Vector3 springDirection = tireTrans.up;
             Vector3 tireVelocity = carRB.GetPointVelocity(tireTrans.position);
@@ -125,14 +132,14 @@ public class Tire : MonoBehaviour
         }
 
 
-        if (Physics.Raycast(tireRay, out RaycastHit hitTire))
+        if (Physics.Raycast(tireRay, out RaycastHit hitTire, 4))
         {
             Vector3 steerDirection = tireTrans.right;
             Vector3 tireVelocity = carRB.GetPointVelocity(tireTrans.position);
 
             float velocity = Vector3.Dot(steerDirection, tireVelocity);
 
-            float deltaV = -velocity * tireGrip.Evaluate(carRB.velocity.magnitude);
+            float deltaV = -velocity * tireGrip.Evaluate(carVelocityPercentage);
 
             float acceleration = deltaV / Time.fixedDeltaTime;
             carRB.AddForceAtPosition(steerDirection * tireMass * acceleration, tireTrans.position);
