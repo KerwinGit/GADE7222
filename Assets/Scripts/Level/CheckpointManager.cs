@@ -10,13 +10,18 @@ public class CheckpointManager : MonoBehaviour
     private Stack<GameObject> checkpointStack = new Stack<GameObject>();
     public GameObject currentCheckpoint;
 
+    [SerializeField] private GameObject finishCheckpoint;
+    public bool isFinished = false;
+    [SerializeField] private GameObject victoryCanvas;
+    [SerializeField] private GameObject defeatCanvas;
+
     [SerializeField] private Material activeMaterial;
     private Renderer checkpointRenderer;
 
     [Header("Timer")]
     [SerializeField] private TMP_Text timerText;
     private float totalTime = 30f;
-    private float timeToAdd = 5f;
+    private float timeToAdd = 3f;
     private float remainingTime;    
 
     private void Start()
@@ -41,25 +46,9 @@ public class CheckpointManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Time's up!");
+            Lose();
         }
     }
-
-    //private void OnEnable()
-    //{
-    //    foreach (GameObject checkpoint in checkpointList)
-    //    {
-    //        checkpoint.GetComponent<Checkpoint>().onCheckpointEnter.AddListener(PassCheckpoint);
-    //    }
-    //}
-
-    //private void OnDisable()
-    //{
-    //    foreach (GameObject checkpoint in checkpointList)
-    //    {
-    //        checkpoint.GetComponent<Checkpoint>().onCheckpointEnter.RemoveListener(PassCheckpoint);
-    //    }
-    //}
 
     private void InitializeCheckpointStack()
     {
@@ -82,6 +71,10 @@ public class CheckpointManager : MonoBehaviour
             checkpointRenderer = currentCheckpoint.GetComponent<Renderer>();
             checkpointRenderer.material = activeMaterial;
         }
+        else
+        {
+            finishCheckpoint.SetActive(true);
+        }
     }
 
     // Update the timer UI text.
@@ -95,5 +88,21 @@ public class CheckpointManager : MonoBehaviour
     {
         remainingTime += secondsToAdd;
         UpdateTimerUI();
-    }    
+    }
+
+    public void Lose()
+    {
+        isFinished = true;
+        defeatCanvas.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Win()
+    {
+        isFinished = true;
+        victoryCanvas.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    
 }

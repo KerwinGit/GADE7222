@@ -671,8 +671,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: GADE7222_POE
-  metroPackageVersion: 
+  metroPackageName: GADE7222POE
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -680,7 +680,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: GADE7222_POE
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: GADE7222_POE
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

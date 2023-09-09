@@ -15,9 +15,7 @@ public class Tire : MonoBehaviour
     public bool isLeftTire = false;
 
     public float carMaxVelocity = 30f; //the car's max velocity
-    public float carVelocityPercentage; //percentage of the max velocity the car is currently moving
-
-
+    public float carVelocityPercentage; //percentage of the max velocity the car is currently moving    
 
     [Header("Suspension")]
     //Suspension
@@ -82,9 +80,6 @@ public class Tire : MonoBehaviour
     public void Suspend()
     {
         tireRay = new Ray(tireTrans.position, -transform.up);
-
-
-
         
         if (Physics.Raycast(tireRay, out RaycastHit hitTire, 4))
         {
@@ -145,6 +140,8 @@ public class Tire : MonoBehaviour
             carRB.AddForceAtPosition(steerDirection * tireMass * acceleration, tireTrans.position);
         }
     }
+
+   
 
     //utter nonsense
     //public void Motor()

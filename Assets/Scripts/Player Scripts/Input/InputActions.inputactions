@@ -11,8 +11,17 @@
                     "id": "6f55e20b-8833-4097-b1aa-59b771f64837",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "Hold(duration=0.1)",
+                    "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "69a42680-e835-4e9d-a41a-94ce2ffb4bd5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -70,6 +79,17 @@
                     "action": "Forward",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "fa3fb7d6-2091-4834-b08b-e00a2bd801a2",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -107,7 +107,9 @@ public class DialogueManager : MonoBehaviour
 
             switch(currentScene.buildIndex)
             {
-                case 0: SceneManager.LoadScene(1);break;
+                case 1: SceneManager.LoadScene(2); break;
+                case 3: SceneManager.LoadScene(4); break;
+                case 5: SceneManager.LoadScene(6); break;
             }
         }
     }
