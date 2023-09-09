@@ -1794,8 +1794,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1028196143692963934, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2193092009706446617, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
+      propertyPath: onCheckpointEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2020686957}
     - target: {fileID: 2282221624439954081, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35
@@ -2824,6 +2828,10 @@ PrefabInstance:
     - target: {fileID: 6635272461589778252, guid: 0cfe81ecf91b61f42a376ca0f503943c, type: 3}
       propertyPath: m_Name
       value: '[PLAYER]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568381187030295744, guid: 0cfe81ecf91b61f42a376ca0f503943c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4257,8 +4265,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1028196143692963934, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2193092009706446617, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
+      propertyPath: onCheckpointEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2020686957}
     - target: {fileID: 2282221624439954081, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40
@@ -4323,8 +4335,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1028196143692963934, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2193092009706446617, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
+      propertyPath: onCheckpointEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2020686957}
     - target: {fileID: 2282221624439954081, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 90
@@ -6324,13 +6340,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointList:
-  - {fileID: 654661731}
-  - {fileID: 1440370389}
-  - {fileID: 1429659599}
   - {fileID: 785529904}
+  - {fileID: 1429659599}
+  - {fileID: 1440370389}
+  - {fileID: 654661731}
+  currentCheckpoint: {fileID: 0}
+  activeMaterial: {fileID: 2100000, guid: b2a6641e740c6e04dbc2addf2c86d245, type: 2}
   timerText: {fileID: 2002262764}
-  totalTime: 60
-  timeToAdd: 10
 --- !u!1 &2039369591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b320e59c617d12949a4ba16f7e4c3094, type: 3}
@@ -6594,7 +6610,7 @@ PrefabInstance:
     - target: {fileID: 2193092009706446617, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
       propertyPath: onCheckpointEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2020686955}
+      objectReference: {fileID: 2020686957}
     - target: {fileID: 2282221624439954081, guid: a48b054a6a6b6a044860c8ee9778192e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.76

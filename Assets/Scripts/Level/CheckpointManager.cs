@@ -8,12 +8,15 @@ public class CheckpointManager : MonoBehaviour
 {
     public List<GameObject> checkpointList;
     private Stack<GameObject> checkpointStack = new Stack<GameObject>();
-    private GameObject currentCheckpoint;
+    public GameObject currentCheckpoint;
+
+    [SerializeField] private Material activeMaterial;
+    private Renderer checkpointRenderer;
 
     [Header("Timer")]
     [SerializeField] private TMP_Text timerText;
-    [SerializeField] private float totalTime = 60f;
-    [SerializeField] private float timeToAdd = 5f;
+    private float totalTime = 30f;
+    private float timeToAdd = 5f;
     private float remainingTime;    
 
     private void Start()
@@ -22,6 +25,10 @@ public class CheckpointManager : MonoBehaviour
         UpdateTimerUI();
 
         InitializeCheckpointStack();
+        currentCheckpoint = checkpointStack.Pop();
+
+        checkpointRenderer = currentCheckpoint.GetComponent<Renderer>();
+        checkpointRenderer.material = activeMaterial;
     }
 
     private void Update()
@@ -37,6 +44,44 @@ public class CheckpointManager : MonoBehaviour
         }
     }
 
+    //private void OnEnable()
+    //{
+    //    foreach (GameObject checkpoint in checkpointList)
+    //    {
+    //        checkpoint.GetComponent<Checkpoint>().onCheckpointEnter.AddListener(PassCheckpoint);
+    //    }
+    //}
+
+    //private void OnDisable()
+    //{
+    //    foreach (GameObject checkpoint in checkpointList)
+    //    {
+    //        checkpoint.GetComponent<Checkpoint>().onCheckpointEnter.RemoveListener(PassCheckpoint);
+    //    }
+    //}
+
+    private void InitializeCheckpointStack()
+    {
+        foreach (GameObject checkpoint in checkpointList)
+        {
+            checkpointStack.Push(checkpoint);
+        }
+    }
+
+    // Call this method when a checkpoint is passed.
+    public void PassCheckpoint()
+    {
+        if (!checkpointStack.IsEmpty())
+        {
+            currentCheckpoint.SetActive(false);
+            currentCheckpoint = checkpointStack.Pop();
+            AddTime(timeToAdd);
+
+            checkpointRenderer = currentCheckpoint.GetComponent<Renderer>();
+            checkpointRenderer.material = activeMaterial;
+        }
+    }
+
     // Update the timer UI text.
     private void UpdateTimerUI()
     {
@@ -48,33 +93,5 @@ public class CheckpointManager : MonoBehaviour
     {
         remainingTime += secondsToAdd;
         UpdateTimerUI();
-    }
-
-    private void InitializeCheckpointStack()
-    {        
-        foreach (GameObject checkpoint in checkpointList)
-        {
-            checkpointStack.Push(checkpoint);
-        }
-    }
-
-    // Pop the stack to find the next checkpoint.
-    public GameObject GetNextCheckpoint()
-    {
-        if (!checkpointStack.IsEmpty())
-        {
-            return checkpointStack.Peek();
-        }
-        return null;
-    }
-
-    // Call this method when a checkpoint is passed.
-    public void PassCheckpoint()
-    {
-        if (!checkpointStack.IsEmpty())
-        {
-            checkpointStack.Pop();
-            AddTime(timeToAdd);
-        }
-    }
+    }    
 }
