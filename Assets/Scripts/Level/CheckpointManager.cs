@@ -26,6 +26,7 @@ public class CheckpointManager : MonoBehaviour
 
         InitializeCheckpointStack();
         currentCheckpoint = checkpointStack.Pop();
+        currentCheckpoint.GetComponent<BoxCollider>().enabled = true;
 
         checkpointRenderer = currentCheckpoint.GetComponent<Renderer>();
         checkpointRenderer.material = activeMaterial;
@@ -71,12 +72,13 @@ public class CheckpointManager : MonoBehaviour
     // Call this method when a checkpoint is passed.
     public void PassCheckpoint()
     {
-        if (!checkpointStack.IsEmpty())
-        {
-            currentCheckpoint.SetActive(false);
-            currentCheckpoint = checkpointStack.Pop();
-            AddTime(timeToAdd);
+        currentCheckpoint.SetActive(false);
+        AddTime(timeToAdd);
 
+        if (!checkpointStack.IsEmpty())
+        {            
+            currentCheckpoint = checkpointStack.Pop();
+            currentCheckpoint.GetComponent<BoxCollider>().enabled = true;
             checkpointRenderer = currentCheckpoint.GetComponent<Renderer>();
             checkpointRenderer.material = activeMaterial;
         }
