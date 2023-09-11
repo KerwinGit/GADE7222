@@ -44,7 +44,7 @@ public class CheckpointManager : MonoBehaviour
             remainingTime -= Time.deltaTime;
             UpdateTimerUI();
         }
-        else
+        else if (!isFinished)
         {
             Lose();
         }
@@ -94,14 +94,12 @@ public class CheckpointManager : MonoBehaviour
     {
         isFinished = true;
         defeatCanvas.SetActive(true);
-        Time.timeScale = 0f;
     }
 
     public void Win()
     {
         isFinished = true;
         victoryCanvas.SetActive(true);
-        Time.timeScale = 0f;
     }
 
     

@@ -35,20 +35,20 @@ public class MenuManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        SceneManager.LoadScene(0);        
     }
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
     }
 
     public void TogglePause()
     {
         isPaused = !isPaused;
-        
+
         if (isPaused)
         {
             pauseMenu.SetActive(true);

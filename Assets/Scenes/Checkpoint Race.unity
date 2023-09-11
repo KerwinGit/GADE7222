@@ -4345,7 +4345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd78c947372637747b786377cd73778d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointManager: {fileID: 0}
+  checkpointManager: {fileID: 2020686957}
   pauseMenu: {fileID: 1089154455}
 --- !u!1001 &981114910
 PrefabInstance:
