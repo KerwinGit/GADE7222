@@ -95,7 +95,7 @@ public class CheckpointManager : MonoBehaviour
         defeatCanvas.SetActive(true);
     }
 
-    public void Win()//lose
+    public void Win()//win
     {
         isFinished = true;
         victoryCanvas.SetActive(true);
