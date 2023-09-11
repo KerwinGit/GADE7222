@@ -30,7 +30,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueDataSO != null)
         {
-            foreach (var entry in dialogueDataSO.dialogueEntries)
+            foreach (var entry in dialogueDataSO.dialogueEntries)//creates separate queues for the different variables stored in the dataSO
             {
                 dialogueQueue.Enqueue(entry.dialogueLine);
                 nameQueue.Enqueue(entry.characterName);
@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour
         return null;
     }
 
-    private void LoadDialogueData()
+    private void LoadDialogueData() //loads next node from each queue
     {
         charName = GetNextCharacterName();
         dialogue = GetNextDialogue();
@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeDialogue(dialogue));
     }
 
-    private IEnumerator TypeDialogue(string text)
+    private IEnumerator TypeDialogue(string text) //helper hethod which types the dialogue to the ui
     {
         continueBtn.interactable = false;       
 
@@ -93,7 +93,7 @@ public class DialogueManager : MonoBehaviour
         continueBtn.interactable = true;
     }
 
-    public void ContinueClicked()
+    public void ContinueClicked()//gets next dialogue or moves to new scene if dialogue queue is empty
     {
         if(!dialogueQueue.IsEmpty())
         {

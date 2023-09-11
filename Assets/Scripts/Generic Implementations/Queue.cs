@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Queue<T> : LinkedList<T>
+public class Queue<T> : LinkedList<T>//generic queue built off of inherits from linkedlist
 {
     public void Enqueue(T value)
     {

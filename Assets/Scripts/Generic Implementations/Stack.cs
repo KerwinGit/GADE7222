@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stack<T> : LinkedList<T>
+public class Stack<T> : LinkedList<T>//generic stack built off of inherits from linkedlist
 {
     public void Push(T value)
     {

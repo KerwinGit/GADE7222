@@ -7,7 +7,7 @@ public class Checkpoint : MonoBehaviour
 {
     public UnityEvent onCheckpointEnter;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//fires off a unity event when checkpoint is entered
     {
         if(other.CompareTag("Player"))
         {

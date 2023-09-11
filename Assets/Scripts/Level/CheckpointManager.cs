@@ -25,31 +25,34 @@ public class CheckpointManager : MonoBehaviour
 
     private void Start()
     {
+        //timer
         remainingTime = totalTime;
         UpdateTimerUI();
 
+        //checkpoint stack handling
         InitializeCheckpointStack();
         currentCheckpoint = checkpointStack.Pop();
         currentCheckpoint.GetComponent<BoxCollider>().enabled = true;
 
+        //updating current checkpoint material
         checkpointRenderer = currentCheckpoint.GetComponent<Renderer>();
         checkpointRenderer.material = activeMaterial;
     }
 
     private void Update()
     {
-        if (remainingTime > 0)
+        if (remainingTime > 0)//updates timer
         {
             remainingTime -= Time.deltaTime;
             UpdateTimerUI();
         }
-        else if (!isFinished)
+        else if (!isFinished)//lose if timer drops to 0 and game isn't finished
         {
             Lose();
         }
     }
 
-    private void InitializeCheckpointStack()
+    private void InitializeCheckpointStack()//reads checkpoints from list to stack
     {
         foreach (GameObject checkpoint in checkpointList)
         {
@@ -57,8 +60,7 @@ public class CheckpointManager : MonoBehaviour
         }
     }
 
-    // Call this method when a checkpoint is passed.
-    public void PassCheckpoint()
+    public void PassCheckpoint()//sets checkpoint to inactive, pops new checkpoint and adds time
     {
         currentCheckpoint.SetActive(false);
         AddTime(timeToAdd);
@@ -76,26 +78,24 @@ public class CheckpointManager : MonoBehaviour
         }
     }
 
-    // Update the timer UI text.
     private void UpdateTimerUI()
     {
         timerText.text = Mathf.CeilToInt(remainingTime).ToString();
     }
 
-    // Method to add seconds to the remaining timer.
     public void AddTime(float secondsToAdd)
     {
         remainingTime += secondsToAdd;
         UpdateTimerUI();
     }
 
-    public void Lose()
+    public void Lose()//lose
     {
         isFinished = true;
         defeatCanvas.SetActive(true);
     }
 
-    public void Win()
+    public void Win()//lose
     {
         isFinished = true;
         victoryCanvas.SetActive(true);

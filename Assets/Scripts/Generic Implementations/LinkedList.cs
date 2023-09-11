@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LinkedList<T>
+public class LinkedList<T> //generic implementation of linkedlist
 {
     protected Node<T> head;
     protected Node<T> tail;
