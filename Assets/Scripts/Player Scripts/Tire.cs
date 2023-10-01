@@ -22,9 +22,9 @@ public class Tire : MonoBehaviour
     //force = offset x strength
     public float suspensionStrength = 1f;   //strength of the spring
     private float suspensionLength = 1f;    //length of the suspension
+
     //dampening
     // force = -(velocity x damping)
-    private float suspensionVelocity;
     public float damper = 1f;   //force that acts against spring/suspension force to slow down movement and make smoother
     //full spring calc
     // force = (offset x strength) - (velocity x damping)
@@ -80,23 +80,24 @@ public class Tire : MonoBehaviour
     public void Suspend()
     {
         tireRay = new Ray(tireTrans.position, -transform.up);
-        
-        if (Physics.Raycast(tireRay, out RaycastHit hitTire, 4))
-        {
-            Vector3 springDirection = tireTrans.up;
-            Vector3 tireVelocity = carRB.GetPointVelocity(tireTrans.position);
-            float suspensionOffset = suspensionLength - hitTire.distance;
+        RaycastHit hit;
 
-            float velocity = Vector3.Dot(springDirection, tireVelocity);
+        if (Physics.Raycast(tireRay, out hit, 4))
+        {
+            Vector3 tireVelocity = carRB.GetPointVelocity(tireTrans.position);
+
+            float suspensionOffset = suspensionLength - hit.distance;
+            float velocity = Vector3.Dot(tireTrans.up, tireVelocity);
 
             float force = (suspensionOffset * suspensionStrength) - (velocity * damper);
-            carRB.AddForceAtPosition(springDirection * force, tireTrans.position);
+            carRB.AddForceAtPosition(tireTrans.up * force, tireTrans.position);
         }
     }
 
     public void Steer()
     {
         tireRay = new Ray(tireTrans.position, -transform.up);
+        RaycastHit hit;
         Vector2 inputVector = inputActions.VehicleMovement.Forward.ReadValue<Vector2>();
         if (givePower)
         {
@@ -127,14 +128,14 @@ public class Tire : MonoBehaviour
         }
 
 
-        if (Physics.Raycast(tireRay, out RaycastHit hitTire, 4))
+        if (Physics.Raycast(tireRay, out hit, 4))
         {
             Vector3 steerDirection = tireTrans.right;
             Vector3 tireVelocity = carRB.GetPointVelocity(tireTrans.position);
 
             float velocity = Vector3.Dot(steerDirection, tireVelocity);
 
-            float deltaV = -velocity * tireGrip.Evaluate(carVelocityPercentage);
+            float deltaV = -velocity * tireGrip.Evaluate(carVelocityPercentage); //change in velocity
 
             float acceleration = deltaV / Time.fixedDeltaTime;
             carRB.AddForceAtPosition(steerDirection * tireMass * acceleration, tireTrans.position);
