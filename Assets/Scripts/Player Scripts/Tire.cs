@@ -3,47 +3,48 @@ using UnityEngine.InputSystem;
 
 public class Tire : MonoBehaviour
 {
-    //appologies for spelling tyres as tires and then also sometimes tyres, all the code is probably tires tho
+    
 
     [Header("Extras")]
-    public GameObject car; //car game object
-    public Rigidbody carRB; //car rigidbody
-    public Transform tireTrans; //tire transform
-    public Ray tireRay; //raycast projected from tire location
+    public GameObject car; 
+    public Rigidbody carRB; 
+    public Transform tireTrans; 
+    public Ray tireRay; 
     public InputActions inputActions;
     public PlayerInput playerInput;
     public bool isLeftTire = false;
 
-    public float carMaxVelocity = 30f; //the car's max velocity
-    public float carVelocityPercentage; //percentage of the max velocity the car is currently moving    
+    public float carMaxVelocity = 30f; 
+    public float carVelocityPercentage;    
 
     [Header("Suspension")]
     //Suspension
     //force = offset x strength
-    public float suspensionStrength = 1f;   //strength of the spring
-    private float suspensionLength = 1f;    //length of the suspension
+    public float suspensionStrength = 1f;  
+    private float suspensionLength = 1f;    
 
     //dampening
     // force = -(velocity x damping)
-    public float damper = 1f;   //force that acts against spring/suspension force to slow down movement and make smoother
+    public float damper = 1f;   
     //full spring calc
     // force = (offset x strength) - (velocity x damping)
-    // Start is called before the first frame update
+    
 
     [Header("Steering + Traction")]
     //acceleration = deltaV/time
+
     //public float slideCounter;
     public AnimationCurve tireGrip;
     //public float tireGrip = 1f;
 
     public float tireMass = 1f;
     //using ackerman angles
-    private float turnAngleLeft;    //angle of the left tyre
-    private float turnAngleRight;   //angle of the right tyre
-    private float tireAngle;        //max angle the tyre will turn
-    public float wheelBase; //width of tire
-    public float rearTrack; //distance from middle of vehicle to the tyre
-    public float turnRad;   //turn radius
+    private float turnAngleLeft;    
+    private float turnAngleRight;   
+    private float tireAngle;        
+    public float wheelBase; 
+    public float rearTrack; 
+    public float turnRad;   
 
 
     [Header("Acceleration")]
@@ -82,7 +83,7 @@ public class Tire : MonoBehaviour
         tireRay = new Ray(tireTrans.position, -transform.up);
         RaycastHit hit;
 
-        if (Physics.Raycast(tireRay, out hit, 4))
+        if (Physics.Raycast(tireRay, out hit, 3))
         {
             Vector3 tireVelocity = carRB.GetPointVelocity(tireTrans.position);
 
@@ -91,6 +92,10 @@ public class Tire : MonoBehaviour
 
             float force = (suspensionOffset * suspensionStrength) - (velocity * damper);
             carRB.AddForceAtPosition(tireTrans.up * force, tireTrans.position);
+        }
+        else
+        {
+            carRB.AddForceAtPosition(-tireTrans.up * 5, tireTrans.position);
         }
     }
 
@@ -103,6 +108,7 @@ public class Tire : MonoBehaviour
         {
             if (inputVector.x > 0)
             {
+                
                 turnAngleLeft = Mathf.Rad2Deg * Mathf.Atan(wheelBase / (turnRad + (rearTrack / 2))) * inputVector.x;
                 turnAngleRight = Mathf.Rad2Deg * Mathf.Atan(wheelBase / (turnRad - (rearTrack / 2))) * inputVector.x;
             }
@@ -128,10 +134,11 @@ public class Tire : MonoBehaviour
         }
 
 
-        if (Physics.Raycast(tireRay, out hit, 4))
+        if (Physics.Raycast(tireRay, out hit, 3))
         {
-            Vector3 steerDirection = tireTrans.right;
             Vector3 tireVelocity = carRB.GetPointVelocity(tireTrans.position);
+            Vector3 steerDirection = tireTrans.right;
+            
 
             float velocity = Vector3.Dot(steerDirection, tireVelocity);
 
