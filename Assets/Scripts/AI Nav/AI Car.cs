@@ -9,6 +9,7 @@ public class AICar : MonoBehaviour
     [SerializeField]private Transform target;
     private NavMeshAgent agent;
     private int currentTargetWaypoint = 0;
+    
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class AICar : MonoBehaviour
             target = WaypointManager.Instance.GetNextWaypoint(currentTargetWaypoint).transform;
 
             Debug.Log(currentTargetWaypoint);
+            
         }
 
         currentTargetWaypoint++;

@@ -84,6 +84,13 @@ MonoBehaviour:
   tireTrans: {fileID: 0}
   playerInput: {fileID: 739572225823043880}
   isLeftTire: 1
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 0
+  waypointChecker: 0
+  waypointCount: 0
+  carMaxVelocity: 30
+  carVelocityPercentage: 0
   suspensionStrength: 100
   damper: 10
   tireGrip:
@@ -216,6 +223,13 @@ MonoBehaviour:
   tireTrans: {fileID: 0}
   playerInput: {fileID: 739572225823043880}
   isLeftTire: 0
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 0
+  waypointChecker: 0
+  waypointCount: 0
+  carMaxVelocity: 30
+  carVelocityPercentage: 0
   suspensionStrength: 100
   damper: 10
   tireGrip:
@@ -517,6 +531,13 @@ MonoBehaviour:
   tireTrans: {fileID: 0}
   playerInput: {fileID: 739572225823043880}
   isLeftTire: 1
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 0
+  waypointChecker: 0
+  waypointCount: 0
+  carMaxVelocity: 30
+  carVelocityPercentage: 0
   suspensionStrength: 100
   damper: 10
   tireGrip:
@@ -842,8 +863,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9008531765351636135}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1547272, y: 0.12929852, z: -0.02042999, w: 0.9792467}
-  m_LocalPosition: {x: -1.9288187, y: 6.76, z: -8.526999}
+  m_LocalRotation: {x: 0.15607016, y: -0, z: -0, w: 0.987746}
+  m_LocalPosition: {x: 0, y: 2.8200002, z: -6.14}
   m_LocalScale: {x: 1.3042085, y: 0.7524065, z: 2.5626473}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -991,6 +1012,13 @@ MonoBehaviour:
   tireTrans: {fileID: 0}
   playerInput: {fileID: 739572225823043880}
   isLeftTire: 0
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 0
+  waypointChecker: 1
+  waypointCount: 0
+  carMaxVelocity: 30
+  carVelocityPercentage: 0
   suspensionStrength: 100
   damper: 10
   tireGrip:

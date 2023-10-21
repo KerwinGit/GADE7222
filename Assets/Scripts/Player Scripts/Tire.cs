@@ -6,30 +6,31 @@ public class Tire : MonoBehaviour
     //appologies for spelling tyres as tires and then also sometimes tyres, all the code is probably tires tho
 
     [Header("Extras")]
-    public GameObject car; //car game object
-    public Rigidbody carRB; //car rigidbody
-    public Transform tireTrans; //tire transform
-    public Ray tireRay; //raycast projected from tire location
+    public GameObject car; 
+    public Rigidbody carRB; 
+    public Transform tireTrans; 
+    public Ray tireRay; 
     public InputActions inputActions;
     public PlayerInput playerInput;
     public bool isLeftTire = false;
     public LayerMask layerToIgnore;
+    
 
-    public float carMaxVelocity = 30f; //the car's max velocity
-    public float carVelocityPercentage; //percentage of the max velocity the car is currently moving    
+    public float carMaxVelocity = 30f; 
+    public float carVelocityPercentage;    
 
     [Header("Suspension")]
     //Suspension
     //force = offset x strength
-    public float suspensionStrength = 1f;   //strength of the spring
-    private float suspensionLength = 1f;    //length of the suspension
+    public float suspensionStrength = 1f;   
+    private float suspensionLength = 1f;    
 
     //dampening
     // force = -(velocity x damping)
-    public float damper = 1f;   //force that acts against spring/suspension force to slow down movement and make smoother
-    //full spring calc
+    public float damper = 1f;   
+    
     // force = (offset x strength) - (velocity x damping)
-    // Start is called before the first frame update
+    
 
     [Header("Steering + Traction")]
     //acceleration = deltaV/time
@@ -39,19 +40,19 @@ public class Tire : MonoBehaviour
 
     public float tireMass = 1f;
     //using ackerman angles
-    private float turnAngleLeft;    //angle of the left tyre
-    private float turnAngleRight;   //angle of the right tyre
-    private float tireAngle;        //max angle the tyre will turn
-    public float wheelBase; //width of tire
-    public float rearTrack; //distance from middle of vehicle to the tyre
-    public float turnRad;   //turn radius
+    private float turnAngleLeft;    
+    private float turnAngleRight;   
+    private float tireAngle;        
+    public float wheelBase; 
+    public float rearTrack; 
+    public float turnRad;   
 
 
     [Header("Acceleration")]
     //public AnimationCurve speedCurve;
-    public bool givePower = false;  //if the tire turns and moves car forward
-    public float accel = 200;       //Acceleration
-    public AnimationCurve a;        //the graph that determines how much power acceleration power is given to the tires based on vehicle speed
+    public bool givePower = false;  
+    public float accel = 200;       
+    public AnimationCurve a;        
 
     private void Awake()
     {
@@ -144,29 +145,9 @@ public class Tire : MonoBehaviour
         }
     }
 
-   
+    
 
-    //utter nonsense
-    //public void Motor()
-    //{
-    //    if (givePower)
-    //    {
-    //        Vector3 accelerationDirection = tireTrans.forward;
-    //        Vector2 inputVector = inputActions.VehicleMovement.Forward.ReadValue<Vector2>();
 
-    //        //if (inputVector.y > 0)
-    //        //{
-    //        //    float vehicleSpeed = Vector3.Dot(car.transform.forward, carRB.velocity);
 
-    //        //    float normSpeed = Mathf.Clamp01(Mathf.Abs(vehicleSpeed) * inputVector.y)*100;
 
-    //        //    float torque = speedCurve.Evaluate(normSpeed) * inputVector.y;
-
-    //        //    carRB.AddForceAtPosition(accelerationDirection * torque, tireTrans.position);
-    //        //}
-
-    //        carRB.AddForceAtPosition(accelerationDirection * , tireTrans.position);
-    //    }
-
-    //}
 }
