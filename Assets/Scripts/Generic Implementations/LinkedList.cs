@@ -7,7 +7,7 @@ public class LinkedList<T> //generic implementation of linkedlist
 {
     protected Node<T> head;
     protected Node<T> tail;
-    protected int size;
+    public int size;
 
     public LinkedList()
     {
@@ -33,6 +33,7 @@ public class LinkedList<T> //generic implementation of linkedlist
             tail = head;
         }
 
+        tail.Next = head;
         size++;
     }
 
@@ -45,13 +46,14 @@ public class LinkedList<T> //generic implementation of linkedlist
         {
             tail.Next = newNode;
             tail = newNode;
+            tail.Next = head;
         }
         else
         {
             head = tail = newNode;
         }
 
-        size += 1;
+        size++;
     }
 
     public void DeleteFromHead()
@@ -63,6 +65,7 @@ public class LinkedList<T> //generic implementation of linkedlist
 
         Node<T> nodeToDelete = head;
         head = head.Next;
+        tail.Next = head;
         size -= 1;
 
         if (IsEmpty())
@@ -92,6 +95,8 @@ public class LinkedList<T> //generic implementation of linkedlist
 
             currentNode.Next = null;
             tail = currentNode;
+            tail.Next = head;
+
         }
     }
 
@@ -135,6 +140,17 @@ public class LinkedList<T> //generic implementation of linkedlist
 
         Node<T> nodeToDelete = currentNode.Next;
         currentNode.Next = nodeToDelete.Next;
+    }
+
+    public T ElementAt(int index)
+    {
+        Node<T> currentNode = head;
+        for (int i = 0; i < index; i++)
+        {
+            currentNode = currentNode.Next;
+        }
+
+        return currentNode.Data;
     }
 
     public void Clear()
