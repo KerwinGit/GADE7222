@@ -13,6 +13,7 @@ public class Tire : MonoBehaviour
     public InputActions inputActions;
     public PlayerInput playerInput;
     public bool isLeftTire = false;
+    public LayerMask layerToIgnore;
 
     public float carMaxVelocity = 30f; //the car's max velocity
     public float carVelocityPercentage; //percentage of the max velocity the car is currently moving    
@@ -58,6 +59,7 @@ public class Tire : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         inputActions = new InputActions();
         inputActions.VehicleMovement.Enable();
+
 
     }
     void Update()
@@ -128,7 +130,7 @@ public class Tire : MonoBehaviour
         }
 
 
-        if (Physics.Raycast(tireRay, out hit, 4))
+        if (Physics.Raycast(tireRay, out hit, 4, ~layerToIgnore))
         {
             Vector3 steerDirection = tireTrans.right;
             Vector3 tireVelocity = carRB.GetPointVelocity(tireTrans.position);

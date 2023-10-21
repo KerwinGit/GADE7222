@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AI : MonoBehaviour
+public class AICar : MonoBehaviour
 {
 
-    public Transform target;
+    [SerializeField]private Transform target;
     private NavMeshAgent agent;
     private int currentTargetWaypoint = 0;
 
@@ -14,31 +14,32 @@ public class AI : MonoBehaviour
     {
         WaypointManager instance = WaypointManager.Instance;
         agent = GetComponent<NavMeshAgent>();
+        target = WaypointManager.Instance.GetNextWaypoint(currentTargetWaypoint).transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         agent.destination = target.position;
+
+        Quaternion targetRotation = Quaternion.LookRotation(agent.steeringTarget - transform.position);
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, agent.angularSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("waypoint"))
+        if (other.CompareTag("Waypoint"))
         {
-            GetNextWaypoint(currentTargetWaypoint);
+            target = WaypointManager.Instance.GetNextWaypoint(currentTargetWaypoint).transform;
+
+            Debug.Log(currentTargetWaypoint);
         }
 
         currentTargetWaypoint++;
 
-        if(currentTargetWaypoint > WaypointManager.Instance.waypointList.size)
+        if (currentTargetWaypoint >= WaypointManager.Instance.waypointLinkedList.size)
         {
             currentTargetWaypoint = 0;
         }
-    }
-
-    private void GetNextWaypoint(int currentWaypointID)
-    {
-        WaypointManager.Instance.waypointList.ElementAt(currentWaypointID);
     }
 }

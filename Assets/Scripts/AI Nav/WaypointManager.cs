@@ -26,16 +26,20 @@ public class WaypointManager : MonoBehaviour
     }
     #endregion
 
-    public LinkedList<GameObject> waypointList = new Stack<GameObject>();
+    public List<GameObject> waypointList;
+    public LinkedList<GameObject> waypointLinkedList = new LinkedList<GameObject>();
 
     public GameObject GetNextWaypoint(int index)
     {
-        if (index >= 0)
-        {
-            return waypointList.ElementAt(index + 1);
-        }
+        return waypointLinkedList.ElementAt(index + 1);
+    }
 
-        return null; // Index out of bounds or no next waypoint.
+    private void InitializeWaypointList()
+    {
+        foreach (GameObject waypoint in waypointList)
+        {
+            waypointLinkedList.AddToTail(waypoint);
+        }
     }
 
     #region unitymethods
@@ -50,6 +54,8 @@ public class WaypointManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        InitializeWaypointList();
     }
     #endregion
 }
