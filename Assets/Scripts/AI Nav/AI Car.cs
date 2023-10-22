@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AICar : MonoBehaviour
 {
 
-    [SerializeField]private Transform target;
+    public Transform target;
     private NavMeshAgent agent;
     private int currentTargetWaypoint = 0;
     

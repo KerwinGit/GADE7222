@@ -8,6 +8,7 @@ public class PlacementManager : MonoBehaviour
     private int playerPlace;
     [SerializeField] private GameObject playerVehicle;
     [SerializeField] private GameObject[] vehicleArr;
+    [SerializeField] private Transform nextWaypoint;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,19 @@ public class PlacementManager : MonoBehaviour
 
     private void placeCalc()
     {
+
+        for (int i = 0; i < vehicleArr.Length; i++)
+        {
+            try
+            {
+                nextWaypoint = vehicleArr[0].GetComponent<AICar>().target;
+            }
+            catch (System.Exception e)
+            {
+                nextWaypoint = vehicleArr[1].GetComponent<AICar>().target;
+            }
+        }
+
         for (int i = 0; i < vehicleArr.Length - 1; i++)
         {
             for (int j = i + 1; j < vehicleArr.Length; j++)
@@ -40,9 +54,25 @@ public class PlacementManager : MonoBehaviour
                     vehicleArr[i] = vehicleArr[j];
                     vehicleArr[j] = temp;
                 }
-
             }
+        }
 
+
+
+        for (int i = 0; i < vehicleArr.Length - 1; i++)
+        {
+            for (int j = i + 1; j < vehicleArr.Length; j++)
+            {
+                if (vehicleArr[i].GetComponent<WaypointCounter>().waypointCount == vehicleArr[j].GetComponent<WaypointCounter>().waypointCount)
+                {
+                    if (Vector3.Distance(vehicleArr[i].transform.position, nextWaypoint.position) > Vector3.Distance(vehicleArr[j].transform.position, nextWaypoint.position))
+                    {
+                        GameObject temp = vehicleArr[i];
+                        vehicleArr[i] = vehicleArr[j];
+                        vehicleArr[j] = temp;
+                    }
+                }
+            }
         }
 
         for (int i = 0; i < vehicleArr.Length; i++)
