@@ -20,7 +20,15 @@ public class PlacementManager : MonoBehaviour
 
     void Update()
     {
-        lap.text = "LAP: " + playerVehicle.GetComponent<WaypointCounter>().lapCount + "";
+
+        if (playerVehicle.GetComponent<WaypointCounter>().lapCount == 0)
+        {
+            lap.text = "LAP: 1";
+        }
+        else
+        {
+            lap.text = "LAP: " + playerVehicle.GetComponent<WaypointCounter>().lapCount + "";
+        }
 
         placeCalc();
 
@@ -83,7 +91,7 @@ public class PlacementManager : MonoBehaviour
                 playerPlace = i;
                 Debug.Log(playerPlace);
             }
-        }
+        }        
 
         place.text = "Rank: " + (playerPlace + 1) + "";
     }

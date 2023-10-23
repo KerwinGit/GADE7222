@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastPassedWaypoint: 0
-  lapCount: 1
+  lapCount: 0
 --- !u!1 &5117022907449902553
 GameObject:
   m_ObjectHideFlags: 0

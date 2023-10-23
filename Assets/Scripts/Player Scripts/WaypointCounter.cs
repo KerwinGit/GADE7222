@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaypointCounter : MonoBehaviour
 {
     public int lastPassedWaypoint;
-    public int lapCount = 1;
+    public int lapCount = 0;
 
 
 
@@ -15,7 +15,7 @@ public class WaypointCounter : MonoBehaviour
         {
             lastPassedWaypoint = WaypointManager.Instance.waypointList.IndexOf(other.gameObject);
 
-            if (other.gameObject.name == "Waypoint (34)")
+            if (other.gameObject.name == "Waypoint")
             {
                 lapCount++;
             }
