@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-public class AIRacerFactory : AbstractGameObjectFactory
+public class AIRacerFactory : AbstractFactory
 {
 
     public override T Create<T>()
