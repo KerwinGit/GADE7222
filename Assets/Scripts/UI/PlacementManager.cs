@@ -13,7 +13,7 @@ public class PlacementManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        vehicleArr = GameObject.FindGameObjectsWithTag("Car");
     }
 
     // Update is called once per frame
