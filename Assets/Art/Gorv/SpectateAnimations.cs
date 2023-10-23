@@ -14,11 +14,6 @@ public class SpectateAnimations : MonoBehaviour
         StartCoroutine("PlayRandAnimation");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     IEnumerator PlayRandAnimation()
     {
