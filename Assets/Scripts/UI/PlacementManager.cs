@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -10,21 +13,19 @@ public class PlacementManager : MonoBehaviour
     [SerializeField] private GameObject[] vehicleArr;
     [SerializeField] private Transform nextWaypoint;
 
-    // Start is called before the first frame update
     void Start()
     {
         vehicleArr = GameObject.FindGameObjectsWithTag("Car");
     }
 
-    // Update is called once per frame
     void Update()
     {
         lap.text = "LAP: " + playerVehicle.GetComponent<WaypointCounter>().lapCount + "";
+
         placeCalc();
 
-        if (playerVehicle.GetComponent<WaypointCounter>().lapCount == 3 && playerPlace == 0)
+        if (playerVehicle.GetComponent<WaypointCounter>().lapCount > 3 && playerPlace == 0)
         {
-
             Debug.Log("BIG WIN");
         }
     }
@@ -38,7 +39,7 @@ public class PlacementManager : MonoBehaviour
             {
                 nextWaypoint = vehicleArr[0].GetComponent<AICar>().target;
             }
-            catch (System.Exception e)
+            catch
             {
                 nextWaypoint = vehicleArr[1].GetComponent<AICar>().target;
             }
@@ -48,28 +49,28 @@ public class PlacementManager : MonoBehaviour
         {
             for (int j = i + 1; j < vehicleArr.Length; j++)
             {
-                if (vehicleArr[i].GetComponent<WaypointCounter>().waypointCount < vehicleArr[j].GetComponent<WaypointCounter>().waypointCount)
+                if (vehicleArr[i].GetComponent<WaypointCounter>().lapCount < vehicleArr[j].GetComponent<WaypointCounter>().lapCount)
                 {
                     GameObject temp = vehicleArr[i];
                     vehicleArr[i] = vehicleArr[j];
                     vehicleArr[j] = temp;
                 }
-            }
-        }
-
-
-
-        for (int i = 0; i < vehicleArr.Length - 1; i++)
-        {
-            for (int j = i + 1; j < vehicleArr.Length; j++)
-            {
-                if (vehicleArr[i].GetComponent<WaypointCounter>().waypointCount == vehicleArr[j].GetComponent<WaypointCounter>().waypointCount)
+                else if (vehicleArr[i].GetComponent<WaypointCounter>().lapCount == vehicleArr[j].GetComponent<WaypointCounter>().lapCount)
                 {
-                    if (Vector3.Distance(vehicleArr[i].transform.position, nextWaypoint.position) > Vector3.Distance(vehicleArr[j].transform.position, nextWaypoint.position))
+                    if (vehicleArr[i].GetComponent<WaypointCounter>().lastPassedWaypoint < vehicleArr[j].GetComponent<WaypointCounter>().lastPassedWaypoint)
                     {
                         GameObject temp = vehicleArr[i];
                         vehicleArr[i] = vehicleArr[j];
                         vehicleArr[j] = temp;
+                    }
+                    else if (vehicleArr[i].GetComponent<WaypointCounter>().lastPassedWaypoint == vehicleArr[j].GetComponent<WaypointCounter>().lastPassedWaypoint)
+                    {
+                        if (Vector3.Distance(vehicleArr[i].transform.position, nextWaypoint.position) > Vector3.Distance(vehicleArr[j].transform.position, nextWaypoint.position))
+                        {
+                            GameObject temp = vehicleArr[i];
+                            vehicleArr[i] = vehicleArr[j];
+                            vehicleArr[j] = temp;
+                        }
                     }
                 }
             }
@@ -80,6 +81,7 @@ public class PlacementManager : MonoBehaviour
             if (vehicleArr[i].gameObject.name == "Car")
             {
                 playerPlace = i;
+                Debug.Log(playerPlace);
             }
         }
 
