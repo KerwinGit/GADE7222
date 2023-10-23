@@ -31,10 +31,7 @@ public class AICar : MonoBehaviour
     {
         if (other.CompareTag("Waypoint"))
         {
-            target = WaypointManager.Instance.GetNextWaypoint(currentTargetWaypoint).transform;
-
-            Debug.Log(currentTargetWaypoint);
-            
+            target = WaypointManager.Instance.GetNextWaypoint(currentTargetWaypoint).transform;            
         }
 
         currentTargetWaypoint++;

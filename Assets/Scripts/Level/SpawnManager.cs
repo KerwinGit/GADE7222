@@ -20,8 +20,6 @@ public class SpawnManager : MonoBehaviour
 
             spawnedGO.GetComponent<NavMeshAgent>().speed = aiRacer.speed;
             spawnedGO.GetComponent<Renderer>().material = aiRacer.material;
-
-            Debug.Log("spawned: "+aiRacer.GetType());
         }
     }
 }

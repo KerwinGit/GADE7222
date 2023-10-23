@@ -7,16 +7,28 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public CheckpointManager checkpointManager;
+    public PlacementManager placementManager;
 
     [SerializeField] private GameObject pauseMenu;
     private bool isPaused = false;
 
     private void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame && !checkpointManager.isFinished)
+        if (checkpointManager!=null)
         {
-            TogglePause();
+            if (Keyboard.current.escapeKey.wasPressedThisFrame && !checkpointManager.isFinished)
+            {
+                TogglePause();
+            }
         }
+        else
+        {
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                TogglePause();
+            }
+        }
+        
     }
     public void LoadCheckpointRace()
     {
