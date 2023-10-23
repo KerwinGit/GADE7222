@@ -13,7 +13,6 @@ public class AICar : MonoBehaviour
 
     void Start()
     {
-        WaypointManager instance = WaypointManager.Instance;
         agent = GetComponent<NavMeshAgent>();
         target = WaypointManager.Instance.GetNextWaypoint(currentTargetWaypoint).transform;
     }

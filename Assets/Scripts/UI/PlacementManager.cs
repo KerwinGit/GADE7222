@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using Unity.UI;
 
 public class PlacementManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI lap;
     [SerializeField] private TextMeshProUGUI place;
+    [SerializeField] private GameObject finishPanel;
+    [SerializeField] private TextMeshProUGUI finishText;
     private int playerPlace;
+    private int winCount = 0;
     [SerializeField] private GameObject playerVehicle;
     [SerializeField] private GameObject[] vehicleArr;
     [SerializeField] private Transform nextWaypoint;
@@ -23,18 +27,18 @@ public class PlacementManager : MonoBehaviour
 
         if (playerVehicle.GetComponent<WaypointCounter>().lapCount == 0)
         {
-            lap.text = "LAP: 1";
+            lap.text = "LAP: 1/3";
         }
         else
         {
-            lap.text = "LAP: " + playerVehicle.GetComponent<WaypointCounter>().lapCount + "";
+            lap.text = "LAP: " + playerVehicle.GetComponent<WaypointCounter>().lapCount + "/3";
         }
 
         placeCalc();
 
-        if (playerVehicle.GetComponent<WaypointCounter>().lapCount > 3 && playerPlace == 0)
+        if (playerVehicle.GetComponent<WaypointCounter>().lapCount > 3)
         {
-            Debug.Log("BIG WIN");
+            Finish();
         }
     }
 
@@ -89,10 +93,19 @@ public class PlacementManager : MonoBehaviour
             if (vehicleArr[i].gameObject.name == "Car")
             {
                 playerPlace = i;
-                Debug.Log(playerPlace);
             }
         }        
 
         place.text = "Rank: " + (playerPlace + 1) + "";
+    }
+
+    private void Finish()
+    {
+        if(winCount<1)
+        {
+            finishText.text = "Your Position: " + (playerPlace + 1);
+            finishPanel.SetActive(true);
+            winCount++;
+        }
     }
 }
