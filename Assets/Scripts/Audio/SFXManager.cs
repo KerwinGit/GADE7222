@@ -43,6 +43,7 @@ public class SFXManager : MonoBehaviour
         {
             aSource.clip = audioMap[name];
             aSource.Play();
+            Debug.Log("Play");
             //AudioSource.PlayClipAtPoint(audioMap[name], transform.position);
         }
         else

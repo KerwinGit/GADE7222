@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 2006305190058918117}
   - component: {fileID: 5723404946403997505}
   - component: {fileID: 3617954269163462087}
+  - component: {fileID: 851448932208696624}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -554,10 +555,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8670846397182027969, guid: e5aa85d1cd32988458cc677e6f69d6c6, type: 3}
-        m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
-        m_MethodName: PlayAudio
-        m_Mode: 5
+      - m_Target: {fileID: 851448932208696624}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -566,6 +567,18 @@ MonoBehaviour:
           m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &851448932208696624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500007719686549713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008fdfa1c5e57cf4da9c8c4d3d33679f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5161891272826604074
 GameObject:
   m_ObjectHideFlags: 0
