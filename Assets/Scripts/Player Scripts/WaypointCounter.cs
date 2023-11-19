@@ -17,7 +17,9 @@ public class WaypointCounter : MonoBehaviour
 
             if (other.gameObject.name == "Waypoint")
             {
+                
                 lapCount++;
+                
             }
         }
     }

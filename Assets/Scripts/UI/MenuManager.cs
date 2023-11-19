@@ -63,11 +63,13 @@ public class MenuManager : MonoBehaviour
 
         if (isPaused)
         {
+            SFXManager.Instance.PlayAudio("Pause");
             pauseMenu.SetActive(true);
             PauseGame();
         }
         else
         {
+            SFXManager.Instance.PlayAudio("Unpause");
             pauseMenu.SetActive(false);
             ResumeGame();
         }
