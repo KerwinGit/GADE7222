@@ -6,31 +6,31 @@ public class Tire : MonoBehaviour
     //appologies for spelling tyres as tires and then also sometimes tyres, all the code is probably tires tho
 
     [Header("Extras")]
-    public GameObject car; 
-    public Rigidbody carRB; 
-    public Transform tireTrans; 
-    public Ray tireRay; 
+    public GameObject car;
+    public Rigidbody carRB;
+    public Transform tireTrans;
+    public Ray tireRay;
     public InputActions inputActions;
     public PlayerInput playerInput;
     public bool isLeftTire = false;
     public LayerMask layerToIgnore;
-    
 
-    public float carMaxVelocity = 30f; 
-    public float carVelocityPercentage;    
+
+    public float carMaxVelocity = 30f;
+    public float carVelocityPercentage;
 
     [Header("Suspension")]
     //Suspension
     //force = offset x strength
-    public float suspensionStrength = 1f;   
-    private float suspensionLength = 1f;    
+    public float suspensionStrength = 1f;
+    private float suspensionLength = 1f;
 
     //dampening
     // force = -(velocity x damping)
-    public float damper = 1f;   
-    
+    public float damper = 1f;
+
     // force = (offset x strength) - (velocity x damping)
-    
+
 
     [Header("Steering + Traction")]
     //acceleration = deltaV/time
@@ -40,19 +40,19 @@ public class Tire : MonoBehaviour
 
     public float tireMass = 1f;
     //using ackerman angles
-    private float turnAngleLeft;    
-    private float turnAngleRight;   
-    private float tireAngle;        
-    public float wheelBase; 
-    public float rearTrack; 
-    public float turnRad;   
+    private float turnAngleLeft;
+    private float turnAngleRight;
+    private float tireAngle;
+    public float wheelBase;
+    public float rearTrack;
+    public float turnRad;
 
 
     [Header("Acceleration")]
     //public AnimationCurve speedCurve;
-    public bool givePower = false;  
-    public float accel = 200;       
-    public AnimationCurve a;        
+    public bool givePower = false;
+    public float accel = 200;
+    public AnimationCurve a;
 
     private void Awake()
     {
@@ -67,7 +67,7 @@ public class Tire : MonoBehaviour
     {
         //handles rotating the tyres
         tireTrans.localRotation = Quaternion.Euler(tireTrans.localRotation.x, tireTrans.localRotation.y + tireAngle, tireTrans.localRotation.z);
-        carVelocityPercentage = carRB.velocity.magnitude/carMaxVelocity;
+        carVelocityPercentage = carRB.velocity.magnitude / carMaxVelocity;
     }
 
     private void FixedUpdate()
@@ -145,7 +145,12 @@ public class Tire : MonoBehaviour
         }
     }
 
-    
+    public float getVelocityPercentage()
+    {
+        return carVelocityPercentage;
+    }
+
+
 
 
 
