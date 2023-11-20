@@ -8,13 +8,12 @@ public class AICar : MonoBehaviour
 
     public Transform target;
     private NavMeshAgent agent;
-    private int currentTargetWaypoint = 0;
-    
+
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        target = WaypointManager.Instance.GetNextWaypoint(currentTargetWaypoint).transform;
+        target = WaypointManager.Instance.firstWaypoint;
     }
 
     void Update()
@@ -30,14 +29,7 @@ public class AICar : MonoBehaviour
     {
         if (other.CompareTag("Waypoint"))
         {
-            target = WaypointManager.Instance.GetNextWaypoint(currentTargetWaypoint).transform;            
-        }
-
-        currentTargetWaypoint++;
-
-        if (currentTargetWaypoint >= WaypointManager.Instance.waypointLinkedList.size)
-        {
-            currentTargetWaypoint = 0;
-        }
+            target = WaypointManager.Instance.GetNextWaypoint(target).transform;
+        }       
     }
 }
