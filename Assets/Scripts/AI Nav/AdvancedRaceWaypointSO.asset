@@ -13,5 +13,125 @@ MonoBehaviour:
   m_Name: AdvancedRaceWaypointSO
   m_EditorClassIdentifier: 
   waypointsData:
-  - waypointName: 
-    connectedWaypointNames: []
+  - waypointName: a
+    connectedWaypointNames:
+    - a (1)
+    - a (2)
+  - waypointName: b
+    connectedWaypointNames:
+    - c
+  - waypointName: c
+    connectedWaypointNames:
+    - d
+  - waypointName: d
+    connectedWaypointNames:
+    - e
+  - waypointName: e
+    connectedWaypointNames:
+    - f
+  - waypointName: f
+    connectedWaypointNames:
+    - g
+  - waypointName: g
+    connectedWaypointNames:
+    - h
+  - waypointName: h
+    connectedWaypointNames:
+    - i
+  - waypointName: i
+    connectedWaypointNames:
+    - j
+  - waypointName: j
+    connectedWaypointNames:
+    - k
+  - waypointName: k
+    connectedWaypointNames:
+    - l
+  - waypointName: l
+    connectedWaypointNames:
+    - m
+  - waypointName: m
+    connectedWaypointNames:
+    - n
+  - waypointName: n
+    connectedWaypointNames:
+    - o
+  - waypointName: o
+    connectedWaypointNames:
+    - p
+  - waypointName: p
+    connectedWaypointNames:
+    - q
+  - waypointName: q
+    connectedWaypointNames:
+    - r
+  - waypointName: r
+    connectedWaypointNames:
+    - s
+  - waypointName: s
+    connectedWaypointNames:
+    - t
+  - waypointName: t
+    connectedWaypointNames:
+    - u
+  - waypointName: u
+    connectedWaypointNames:
+    - v
+  - waypointName: v
+    connectedWaypointNames:
+    - w
+  - waypointName: w
+    connectedWaypointNames:
+    - x
+  - waypointName: x
+    connectedWaypointNames:
+    - y
+  - waypointName: y
+    connectedWaypointNames:
+    - z
+  - waypointName: y
+    connectedWaypointNames:
+    - z
+  - waypointName: z
+    connectedWaypointNames:
+    - A
+  - waypointName: A
+    connectedWaypointNames:
+    - B
+  - waypointName: B
+    connectedWaypointNames:
+    - C
+  - waypointName: C
+    connectedWaypointNames:
+    - D
+  - waypointName: D
+    connectedWaypointNames:
+    - E
+  - waypointName: E
+    connectedWaypointNames:
+    - E (1)
+    - E (2)
+  - waypointName: F
+    connectedWaypointNames:
+    - G
+  - waypointName: G
+    connectedWaypointNames:
+    - H
+  - waypointName: H
+    connectedWaypointNames:
+    - I
+  - waypointName: I
+    connectedWaypointNames:
+    - a
+  - waypointName: a (1)
+    connectedWaypointNames:
+    - b
+  - waypointName: a (2)
+    connectedWaypointNames:
+    - b
+  - waypointName: E (1)
+    connectedWaypointNames:
+    - F
+  - waypointName: E (2)
+    connectedWaypointNames:
+    - F
