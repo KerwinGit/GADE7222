@@ -19,6 +19,16 @@ public abstract class Graph<T> //generic implementation of graph
         }
     }
 
+    public List<T> GetNeighbors(T vertex) //returns a list of connected vertices
+    {
+        if (adjacencyList.ContainsKey(vertex))
+        {
+            return adjacencyList[vertex];
+        }
+
+        return new List<T>();
+    }
+
     public abstract void AddEdge(T source, T destination);
 }
 
