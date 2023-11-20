@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adea35c3f66ffeb478b340dd22d81099, type: 3}
+  m_Name: BeginnerRaceWaypointSO
+  m_EditorClassIdentifier: 
+  waypointsData:
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint (1)
+    connectedWaypointNames:
+    - Waypoint (2)
+  - waypointName: Waypoint (2)
+    connectedWaypointNames:
+    - Waypoint (3)
+  - waypointName: Waypoint (3)
+    connectedWaypointNames:
+    - Waypoint (4)
+  - waypointName: Waypoint (4)
+    connectedWaypointNames:
+    - Waypoint (5)
+  - waypointName: Waypoint (5)
+    connectedWaypointNames:
+    - Waypoint (6)
+  - waypointName: Waypoint (6)
+    connectedWaypointNames:
+    - Waypoint (7)
+  - waypointName: Waypoint (7)
+    connectedWaypointNames:
+    - Waypoint (8)
+  - waypointName: Waypoint (8)
+    connectedWaypointNames:
+    - Waypoint (9)
+  - waypointName: Waypoint (9)
+    connectedWaypointNames:
+    - Waypoint (10)
+  - waypointName: Waypoint (10)
+    connectedWaypointNames:
+    - Waypoint (11)
+  - waypointName: Waypoint (11)
+    connectedWaypointNames:
+    - Waypoint (12)
+  - waypointName: Waypoint (12)
+    connectedWaypointNames:
+    - Waypoint (13)
+  - waypointName: Waypoint (13)
+    connectedWaypointNames:
+    - Waypoint (14)
+  - waypointName: Waypoint (14)
+    connectedWaypointNames:
+    - Waypoint (15)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)
+  - waypointName: Waypoint
+    connectedWaypointNames:
+    - Waypoint (1)

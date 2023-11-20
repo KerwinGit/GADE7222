@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "NewDialogueDataSO", menuName = "Custom/Dialogue Data Scriptable Object")]
 public class DialogueDataSO : ScriptableObject
