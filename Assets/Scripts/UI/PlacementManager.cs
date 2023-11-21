@@ -23,15 +23,8 @@ public class PlacementManager : MonoBehaviour
 
     void Update()
     {
-
-        if (playerVehicle.GetComponent<WaypointCounter>().lapCount == 0)
-        {
-            lap.text = "LAP: 1/3";
-        }
-        else
-        {
-            lap.text = "LAP: " + playerVehicle.GetComponent<WaypointCounter>().lapCount + "/3";
-        }
+        lap.text = "LAP: " + playerVehicle.GetComponent<WaypointCounter>().lapCount + "/3";
+        
 
         placeCalc();
 
@@ -68,7 +61,7 @@ public class PlacementManager : MonoBehaviour
                 }
                 else if (vehicleArr[i].GetComponent<WaypointCounter>().lapCount == vehicleArr[j].GetComponent<WaypointCounter>().lapCount)
                 {
-                    if (vehicleArr[i].GetComponent<WaypointCounter>().lastPassedWaypoint < vehicleArr[j].GetComponent<WaypointCounter>().lastPassedWaypoint)
+                    if (vehicleArr[i].GetComponent<WaypointCounter>().lastPassedWaypoint < vehicleArr[j].GetComponent<WaypointCounter>().lastPassedWaypoint && vehicleArr[j].GetComponent<WaypointCounter>().lastPassedWaypoint != WaypointManager.Instance.waypointGraphSO.waypointsData.Count-1)
                     {
                         GameObject temp = vehicleArr[i];
                         vehicleArr[i] = vehicleArr[j];

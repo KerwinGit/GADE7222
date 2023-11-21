@@ -17,6 +17,12 @@ MonoBehaviour:
     connectedWaypointNames:
     - a (1)
     - a (2)
+  - waypointName: a (1)
+    connectedWaypointNames:
+    - b
+  - waypointName: a (2)
+    connectedWaypointNames:
+    - b
   - waypointName: b
     connectedWaypointNames:
     - c
@@ -111,6 +117,12 @@ MonoBehaviour:
     connectedWaypointNames:
     - E (1)
     - E (2)
+  - waypointName: E (1)
+    connectedWaypointNames:
+    - F
+  - waypointName: E (2)
+    connectedWaypointNames:
+    - F
   - waypointName: F
     connectedWaypointNames:
     - G
@@ -119,19 +131,4 @@ MonoBehaviour:
     - H
   - waypointName: H
     connectedWaypointNames:
-    - I
-  - waypointName: I
-    connectedWaypointNames:
     - a
-  - waypointName: a (1)
-    connectedWaypointNames:
-    - b
-  - waypointName: a (2)
-    connectedWaypointNames:
-    - b
-  - waypointName: E (1)
-    connectedWaypointNames:
-    - F
-  - waypointName: E (2)
-    connectedWaypointNames:
-    - F

@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastPassedWaypoint: 0
-  lapCount: 0
+  lapCount: 1
 --- !u!114 &1317543708396471618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,7 +742,7 @@ Transform:
   m_GameObject: {fileID: 6254237996603966278}
   serializedVersion: 2
   m_LocalRotation: {x: 0.15607013, y: -0, z: -0, w: 0.987746}
-  m_LocalPosition: {x: 2.1762009, y: 2.2681923, z: -9.370518}
+  m_LocalPosition: {x: 0, y: 2.8199997, z: -6.14}
   m_LocalScale: {x: 1.3042085, y: 0.7524065, z: 2.5626473}
   m_ConstrainProportionsScale: 0
   m_Children: []

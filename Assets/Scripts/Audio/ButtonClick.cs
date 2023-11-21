@@ -4,22 +4,10 @@ using UnityEngine;
 
 public class ButtonClick : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Start is called before the first frame update    
 
     public void onClick() 
     {
-        SFXManager.Instance.PlayAudio("Click");
+        //SFXManager.Instance.PlayAudio("Click");
     }
 }
