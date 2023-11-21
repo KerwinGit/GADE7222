@@ -8,6 +8,13 @@ public class CarCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        SFXManager.Instance.PlayAudio("Bump");
+        try
+        {
+            SFXManager.Instance.PlayAudio("Bump");
+        }
+        catch
+        {
+            Debug.Log("i hate this stupid f!@#$%^ error leave me alone");
+        }
     }
 }
