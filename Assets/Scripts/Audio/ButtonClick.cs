@@ -8,6 +8,6 @@ public class ButtonClick : MonoBehaviour
 
     public void onClick() 
     {
-        //SFXManager.Instance.PlayAudio("Click");
+        SFXManager.Instance.PlayAudio("Click");
     }
 }
