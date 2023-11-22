@@ -32,11 +32,6 @@ public class SFXManager : MonoBehaviour
 
     }
 
-    void Start()
-    {
-
-    }
-
     public void PlayAudio(string name)
     {
         if (audioMap.ContainsKey(name))
@@ -44,7 +39,6 @@ public class SFXManager : MonoBehaviour
             aSource.clip = audioMap[name];
             aSource.Play();
             Debug.Log("Play");
-            //AudioSource.PlayClipAtPoint(audioMap[name], transform.position);
         }
         else
         {
