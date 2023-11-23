@@ -28,23 +28,28 @@ public abstract class AIRacer
 {
     public abstract int speed { get; }
     public abstract Material material { get; }
+
+    //public abstract Mesh model { get; }
 }
 
 public class RedRacer : AIRacer
 {
     public override int speed => 30;
     public override Material material => Resources.Load<Material>("Car Red");
+    //public override Mesh model => Resources.Load<Mesh>("Slowcar");
 }
 
 public class GreenRacer : AIRacer
 {
     public override int speed => 40;
     public override Material material => Resources.Load<Material>("Car Green");
+    //public override Mesh model => Resources.Load<Mesh>("RedCar");
 }
 
 public class BlueRacer : AIRacer
 {
     public override int speed => 35;
     public override Material material => Resources.Load<Material>("Car Blue");
+    //public override Mesh model => Resources.Load<Mesh>("Stubby");
 }
 

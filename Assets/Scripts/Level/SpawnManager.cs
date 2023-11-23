@@ -18,8 +18,27 @@ public class SpawnManager : MonoBehaviour
 
             GameObject spawnedGO = Instantiate(spawnPrefab, t.position, t.rotation);
 
+            //MeshFilter meshFilter = spawnedGO.GetComponent<MeshFilter>();
+
+            //if (meshFilter == null)
+            //{
+            //    meshFilter = spawnedGO.AddComponent<MeshFilter>();
+            //}
+
+            //MeshRenderer meshRenderer = spawnedGO.GetComponent<MeshRenderer>();
+
+            //if (meshRenderer == null)
+            //{
+            //    meshRenderer = spawnedGO.AddComponent<MeshRenderer>();
+            //}
+
             spawnedGO.GetComponent<NavMeshAgent>().speed = aiRacer.speed;
             spawnedGO.GetComponent<Renderer>().material = aiRacer.material;
+            //meshFilter.mesh = aiRacer.model;
+            //meshRenderer.material = aiRacer.material;
+            
+            
+            
         }
     }
 }

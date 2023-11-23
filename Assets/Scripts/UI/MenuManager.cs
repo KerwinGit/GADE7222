@@ -57,6 +57,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
     }
 
+    public void Escape() 
+    {
+        Application.Quit();
+    }
+
     public void TogglePause()
     {
         isPaused = !isPaused;
