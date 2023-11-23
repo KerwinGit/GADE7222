@@ -19,7 +19,9 @@ public class SpawnManager : MonoBehaviour
             GameObject spawnedGO = Instantiate(spawnPrefab, t.position, t.rotation);
 
             spawnedGO.GetComponent<NavMeshAgent>().speed = aiRacer.speed;
-            spawnedGO.GetComponent<Renderer>().material = aiRacer.material;
+            spawnedGO.GetComponentInChildren<MeshFilter>().mesh = aiRacer.mesh;
+            spawnedGO.GetComponentInChildren<Renderer>().material = aiRacer.material;
+
         }
     }
 }

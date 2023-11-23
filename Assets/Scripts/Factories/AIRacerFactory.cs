@@ -27,24 +27,28 @@ public class AIRacerFactory : AbstractFactory
 public abstract class AIRacer
 {
     public abstract int speed { get; }
+    public abstract Mesh mesh { get; }
     public abstract Material material { get; }
 }
 
 public class RedRacer : AIRacer
 {
     public override int speed => 30;
+    public override Mesh mesh => Resources.Load<Mesh>("RedRacerMesh");
     public override Material material => Resources.Load<Material>("Car Red");
 }
 
 public class GreenRacer : AIRacer
 {
     public override int speed => 40;
+    public override Mesh mesh => Resources.Load<Mesh>("GreenRacerMesh");
     public override Material material => Resources.Load<Material>("Car Green");
 }
 
 public class BlueRacer : AIRacer
 {
     public override int speed => 35;
+    public override Mesh mesh => Resources.Load<Mesh>("BlueRacerMesh");
     public override Material material => Resources.Load<Material>("Car Blue");
 }
 
