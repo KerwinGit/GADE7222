@@ -32,7 +32,7 @@ public abstract class Graph<T> //generic implementation of graph
     public abstract void AddEdge(T source, T destination);
 }
 
-public class UndirectedGraph<T> : Graph<T> // an undirected graph is one with two-way connections between each node/vertex
+public class UndirectedGraph<T> : Graph<T> 
 {
     public override void AddEdge(T source, T destination)
     {
@@ -44,7 +44,7 @@ public class UndirectedGraph<T> : Graph<T> // an undirected graph is one with tw
     }
 }
 
-public class DirectedGraph<T> : Graph<T> // a directed graph has one-way connections
+public class DirectedGraph<T> : Graph<T> 
 {
     public override void AddEdge(T source, T destination)
     {
