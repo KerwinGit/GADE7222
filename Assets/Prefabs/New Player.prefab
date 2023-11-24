@@ -516,7 +516,6 @@ GameObject:
   - component: {fileID: 7588465645277883489}
   - component: {fileID: 8633631847625251046}
   - component: {fileID: 3729680370937505460}
-  - component: {fileID: 1317543708396471618}
   m_Layer: 7
   m_Name: Car
   m_TagString: Player
@@ -704,18 +703,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastPassedWaypoint: 0
   lapCount: 1
---- !u!114 &1317543708396471618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4588655529541640807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f4e0f5d0282984a8be3f2e3e031674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5410978581237185371
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,8 +885,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6254237996603966278}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15607016, y: -0, z: -0, w: 0.987746}
-  m_LocalPosition: {x: 2.6666667, y: -22.02333, z: -14.8533325}
+  m_LocalRotation: {x: 0.15607013, y: -0, z: -0, w: 0.987746}
+  m_LocalPosition: {x: 0, y: 3.4833324, z: -8.1866665}
   m_LocalScale: {x: 1.3042085, y: 0.7524065, z: 2.5626473}
   m_ConstrainProportionsScale: 0
   m_Children: []

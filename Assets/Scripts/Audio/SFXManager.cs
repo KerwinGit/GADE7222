@@ -36,7 +36,6 @@ public class SFXManager : MonoBehaviour
         if (audioMap.ContainsKey(name))
         {
             aSource.PlayOneShot(audioMap.Get(name));
-            Debug.Log("Play");
         }
         else
         {

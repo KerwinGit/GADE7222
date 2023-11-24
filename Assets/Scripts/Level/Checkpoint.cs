@@ -9,9 +9,10 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)//fires off a unity event when checkpoint is entered
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             onCheckpointEnter.Invoke();
+            SFXManager.Instance.PlayAudio("Fruit collect 1");
         }
     }
 }
