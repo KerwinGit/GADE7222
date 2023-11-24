@@ -12299,6 +12299,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2572385765242044635, guid: d5bb21e96a7637847aec376e8137942f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 581799513}
+    - target: {fileID: 2572385765242044635, guid: d5bb21e96a7637847aec376e8137942f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 2722754647996637665, guid: d5bb21e96a7637847aec376e8137942f, type: 3}
       propertyPath: m_Name
       value: Pause Panel
@@ -12326,6 +12334,14 @@ PrefabInstance:
     - target: {fileID: 6130706289659513840, guid: d5bb21e96a7637847aec376e8137942f, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703956653927001947, guid: d5bb21e96a7637847aec376e8137942f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 581799513}
+    - target: {fileID: 6703956653927001947, guid: d5bb21e96a7637847aec376e8137942f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePause
       objectReference: {fileID: 0}
     - target: {fileID: 8919358414524427127, guid: d5bb21e96a7637847aec376e8137942f, type: 3}
       propertyPath: m_Pivot.x
