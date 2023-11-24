@@ -94,6 +94,7 @@ public class Tire : MonoBehaviour
 
             float force = (suspensionOffset * suspensionStrength) - (velocity * damper);
             carRB.AddForceAtPosition(tireTrans.up * force, tireTrans.position);
+
         }
     }
 
