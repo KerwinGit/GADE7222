@@ -86,6 +86,7 @@ public class DialogueManager : MonoBehaviour
         portraitImage.sprite = charPortrait;
         foreach (char letter in text)
         {
+            SFXManager.Instance.PlayAudio("dialog");
             dialogueText.text += letter;
             yield return new WaitForSeconds(0.05f); // Add a slight delay for typing effect
         }

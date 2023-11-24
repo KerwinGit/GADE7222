@@ -19,7 +19,7 @@ public class SpectateAnimations : MonoBehaviour
     {
 
         animTime = Random.Range(3,16);
-        randAnim = Random.Range(0,5);
+        randAnim = Random.Range(0,3);
 
         if (randAnim == 0)
         {

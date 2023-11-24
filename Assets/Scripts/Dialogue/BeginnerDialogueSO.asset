@@ -13,20 +13,19 @@ MonoBehaviour:
   m_Name: BeginnerDialogueSO
   m_EditorClassIdentifier: 
   dialogueEntries:
-  - characterName: Edward
-    dialogueLine: Wanna ram into more pillars of light?
+  - characterName: Bugbite Barry
+    dialogueLine: So you managed to beat the checkpoint race?
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
-  - characterName: Jovvy
-    dialogueLine: Nah, but I hear theres this exclusive group of racers. I say we
-      got a shot at joining. They got some crazy race tracks.
+  - characterName: Ratflea Rick
+    dialogueLine: Seems you got the spirit, but do you have the skills to take on
+      the other racers?
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
-  - characterName: Edward
-    dialogueLine: Alright, so lets join and race 'em.
+  - characterName: Bugbite Barry
+    dialogueLine: Only one way to find out, Rick
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
-  - characterName: Jovvy
-    dialogueLine: Woah so eager, we should probably practice a bit first. Race some
-      people on a straight forward course?
+  - characterName: Ratflea Rick
+    dialogueLine: LET'S GET RACING!!!
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
-  - characterName: Edward
-    dialogueLine: Yeah i guess... I'll round up some people to race.
+  - characterName: Bugbite Barry
+    dialogueLine: ON YOUR MARKS... GET SET... GO!!!!
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}

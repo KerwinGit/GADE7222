@@ -13,26 +13,24 @@ MonoBehaviour:
   m_Name: CheckpointDialogueSO
   m_EditorClassIdentifier: 
   dialogueEntries:
-  - characterName: Jovvy
-    dialogueLine: Yo eddy my guy, you see those pillars of light?
+  - characterName: Ratflea Rick
+    dialogueLine: Welcome, contestant, to the Polycanyooooon Derby!
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
-  - characterName: Edward
-    dialogueLine: Yeah what about em?
+  - characterName: Bugbite Barry
+    dialogueLine: Before we can let you into the actual races, we gotta make sure
+      you have what it takes to compete
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
-  - characterName: Jovvy
-    dialogueLine: You see how one of 'em is green?
+  - characterName: Ratflea Rick
+    dialogueLine: To qualify for the competition, you'll have to first beat the checkpoint
+      race
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
-  - characterName: Edward
-    dialogueLine: I already know what you're gonna say... LETS DRIVE AT THEM REAL
-      SPEEDY LIKE!
+  - characterName: Bugbite Barry
+    dialogueLine: Make it through every beam of light before the timer runs out!
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
-  - characterName: Jovvy
-    dialogueLine: That wasn't even close... but I like that idea better, lets do
-      it.
+  - characterName: Ratflea Rick
+    dialogueLine: It might seem like it's not a lot of time, but don't worry about
+      it. Time will be added for each checkpoint you cross.
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
-  - characterName: Edward
-    dialogueLine: What was you're idea?
-    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
-  - characterName: Jovvy
-    dialogueLine: Don't worry 'bout it. LETS GO!
+  - characterName: Bugbite Barry
+    dialogueLine: NOW LET'S GET DRIVING!!!
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}

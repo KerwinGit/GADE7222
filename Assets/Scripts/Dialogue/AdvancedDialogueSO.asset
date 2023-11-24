@@ -13,22 +13,23 @@ MonoBehaviour:
   m_Name: AdvancedDialogueSO
   m_EditorClassIdentifier: 
   dialogueEntries:
-  - characterName: Jovvy
-    dialogueLine: Alright we made it into the big leagues.
+  - characterName: Ratflea Rick
+    dialogueLine: You did pretty well in that first race, for an amateur
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
-  - characterName: Edward
-    dialogueLine: Well, can't say I didn't expect it but i guess we can celebrate.
+  - characterName: Bugbite Barry
+    dialogueLine: Congrats on making it to the final round, kid
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
-  - characterName: Jovvy
-    dialogueLine: No celebrating yet, check out that race course... look at those
-      different paths. We can't let our guards down.
+  - characterName: Ratflea Rick
+    dialogueLine: This time, we've thrown in a couple of twists and turns on the
+      tracks
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
-  - characterName: Edward
-    dialogueLine: Stop speaking like a nerd and get in the car
+  - characterName: Bugbite Barry
+    dialogueLine: Let's see if you can use those brains of yours on the racecourse
+      to outsmart the c!ompetition and cross the finish line first
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
-  - characterName: Jovvy
-    dialogueLine: C'mon man, I was just trying to-
+  - characterName: Ratflea Rick
+    dialogueLine: BRAAAIIIINSS??
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
-  - characterName: Edward
-    dialogueLine: Yeah yeah, whatever man lets school these fools.
+  - characterName: Bugbite Barry
+    dialogueLine: Shut up, let's start the race! 3... 2... 1... GO!!!
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}

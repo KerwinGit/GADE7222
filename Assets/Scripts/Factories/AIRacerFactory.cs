@@ -40,7 +40,7 @@ public class RedRacer : AIRacer
 
 public class GreenRacer : AIRacer
 {
-    public override int speed => 40;
+    public override int speed => 39;
     public override Mesh mesh => Resources.Load<Mesh>("GreenRacerMesh");
     public override Material material => Resources.Load<Material>("Car Green");
 }
