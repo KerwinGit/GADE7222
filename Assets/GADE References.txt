@@ -7,7 +7,10 @@ Pixabay. 2022. car idle. [Sound recording]. Available at: https://pixabay.com/so
 Pixabay. 2021. Clank Car Crash Collision. [Sound recording]. Available at: https://pixabay.com/sound-effects/clank-car-crash-collision-6206/ (Accessed 22 November 2023).
 Pixabay. 2022. UI click. [Sound recording]. Available at: https://pixabay.com/sound-effects/ui-click-43196/ (Accessed 22 November 2023).
 UNIVERSFIELD. 2022. Notification 4. [Sound recording]. Available at: https://pixabay.com/sound-effects/notification-4-126507/ (Accessed 22 November 2023).
+Wicks, B. 2023. FinishFlag. [Personal 3D Model]. Cape Town: Unpublished.
 Wicks, B. 2023. Gorv 3D Model. [Personal 3D Model]. Cape Town: Unpublished.
-
-
-
+Wicks, B. 2023. GrandStand. [Personal 3D Model]. Cape Town: Unpublished.
+Wicks, B. 2023. PlayerCar. [Personal 3D Model]. Cape Town: Unpublished.
+Wicks, B. 2023. RedCar. [Personal 3D Model]. Cape Town: Unpublished.
+Wicks, B. 2023. SlowCar. [Personal 3D Model]. Cape Town: Unpublished.
+Wicks, B. 2023. StubbyCar. [Personal 3D Model]. Cape Town: Unpublished.
