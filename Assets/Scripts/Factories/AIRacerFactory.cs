@@ -27,29 +27,29 @@ public class AIRacerFactory : AbstractFactory
 public abstract class AIRacer
 {
     public abstract int speed { get; }
-    public abstract Material material { get; }
+    public abstract List <Material> material { get; }
 
-    //public abstract Mesh model { get; }
+    public abstract Mesh model { get; }
 }
 
 public class RedRacer : AIRacer
 {
     public override int speed => 30;
-    public override Material material => Resources.Load<Material>("Car Red");
-    //public override Mesh model => Resources.Load<Mesh>("Slowcar");
+    public override List<Material> material => new List<Material> { Resources.Load<Material>("Slowmat1"), Resources.Load<Material>("Slowmat2"), Resources.Load<Material>("Slowmat3"), Resources.Load<Material>("Slowmat4"), Resources.Load<Material>("Slowmat5"), Resources.Load<Material>("Slowmat6"), Resources.Load<Material>("Slowmat7") };
+    public override Mesh model => Resources.Load<Mesh>("Slowcar");
 }
 
 public class GreenRacer : AIRacer
 {
     public override int speed => 40;
-    public override Material material => Resources.Load<Material>("Car Green");
-    //public override Mesh model => Resources.Load<Mesh>("RedCar");
+    public override List<Material> material => new List<Material> { Resources.Load<Material>("RedMat1"), Resources.Load<Material>("RedMat2"), Resources.Load<Material>("RedMat3"), Resources.Load<Material>("RedMat4"), Resources.Load<Material>("RedMat5"), Resources.Load<Material>("RedMat6"), Resources.Load<Material>("RedMat7"), Resources.Load<Material>("RedMat8") };
+    public override Mesh model => Resources.Load<Mesh>("Redcar");
 }
 
 public class BlueRacer : AIRacer
 {
     public override int speed => 35;
-    public override Material material => Resources.Load<Material>("Car Blue");
-    //public override Mesh model => Resources.Load<Mesh>("Stubby");
+    public override List<Material> material => new List<Material> { Resources.Load<Material>("Stubymat1"), Resources.Load<Material>("Stubymat2"), Resources.Load<Material>("Stubymat3"), Resources.Load<Material>("Stubymat4"), Resources.Load<Material>("Stubymat5"), Resources.Load<Material>("Stubymat6"), Resources.Load<Material>("Stubymat7") };
+    public override Mesh model => Resources.Load<Mesh>("Stubby");
 }
 
