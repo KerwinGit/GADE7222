@@ -15,17 +15,17 @@ MonoBehaviour:
   dialogueEntries:
   - characterName: Bugbite Barry
     dialogueLine: So you managed to beat the checkpoint race?
-    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+    charPortrait: {fileID: 21300000, guid: 949f2189c8af85e4fbdf32b46e73e8da, type: 3}
   - characterName: Ratflea Rick
     dialogueLine: Seems you got the spirit, but do you have the skills to take on
       the other racers?
-    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
+    charPortrait: {fileID: 21300000, guid: e3ef8f8e3291567488464984849c5142, type: 3}
   - characterName: Bugbite Barry
     dialogueLine: Only one way to find out, Rick
-    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+    charPortrait: {fileID: 21300000, guid: 949f2189c8af85e4fbdf32b46e73e8da, type: 3}
   - characterName: Ratflea Rick
     dialogueLine: LET'S GET RACING!!!
-    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
+    charPortrait: {fileID: 21300000, guid: e3ef8f8e3291567488464984849c5142, type: 3}
   - characterName: Bugbite Barry
     dialogueLine: ON YOUR MARKS... GET SET... GO!!!!
-    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+    charPortrait: {fileID: 21300000, guid: 949f2189c8af85e4fbdf32b46e73e8da, type: 3}

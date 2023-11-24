@@ -15,21 +15,21 @@ MonoBehaviour:
   dialogueEntries:
   - characterName: Ratflea Rick
     dialogueLine: You did pretty well in that first race, for an amateur
-    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
+    charPortrait: {fileID: 21300000, guid: e3ef8f8e3291567488464984849c5142, type: 3}
   - characterName: Bugbite Barry
     dialogueLine: Congrats on making it to the final round, kid
-    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+    charPortrait: {fileID: 21300000, guid: 949f2189c8af85e4fbdf32b46e73e8da, type: 3}
   - characterName: Ratflea Rick
     dialogueLine: This time, we've thrown in a couple of twists and turns on the
       tracks
-    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
+    charPortrait: {fileID: 21300000, guid: e3ef8f8e3291567488464984849c5142, type: 3}
   - characterName: Bugbite Barry
     dialogueLine: Let's see if you can use those brains of yours on the racecourse
       to outsmart the competition and cross the finish line first!
-    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+    charPortrait: {fileID: 21300000, guid: 949f2189c8af85e4fbdf32b46e73e8da, type: 3}
   - characterName: Ratflea Rick
     dialogueLine: BRAAAIIIINSS??
-    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
+    charPortrait: {fileID: 21300000, guid: e3ef8f8e3291567488464984849c5142, type: 3}
   - characterName: Bugbite Barry
     dialogueLine: Shut up, let's start the race! 3... 2... 1... GO!!!
-    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+    charPortrait: {fileID: 21300000, guid: 949f2189c8af85e4fbdf32b46e73e8da, type: 3}
