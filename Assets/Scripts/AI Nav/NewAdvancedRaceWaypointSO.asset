@@ -39,10 +39,34 @@ MonoBehaviour:
     - i
   - waypointName: i
     connectedWaypointNames:
+    - i (1)
+    - i (2)
+  - waypointName: i (1)
+    connectedWaypointNames:
+    - i (1) a
+    - j
+  - waypointName: i (1) a
+    connectedWaypointNames:
+    - i (1) b
+  - waypointName: i (2)
+    connectedWaypointNames:
     - j
   - waypointName: j
     connectedWaypointNames:
+    - j (1)
+    - j (2)
+  - waypointName: j (1)
+    connectedWaypointNames:
+    - j (1) a
+  - waypointName: j (2)
+    connectedWaypointNames:
     - k
+  - waypointName: j (1) a
+    connectedWaypointNames:
+    - k
+  - waypointName: i (1) b
+    connectedWaypointNames:
+    - l
   - waypointName: k
     connectedWaypointNames:
     - l
