@@ -253,8 +253,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.303564, y: 0.5517, z: 2.763998}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.8524203, y: 0.5517, z: 3.7782364}
+  m_Center: {x: -0.005600691, y: 0, z: -0.019334793}
 --- !u!54 &642887853578287956
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 60059245845703037}
   m_Layer: 7
   m_Name: AI Car
-  m_TagString: Car
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

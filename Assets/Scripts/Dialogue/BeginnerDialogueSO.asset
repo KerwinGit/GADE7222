@@ -14,19 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueEntries:
   - characterName: Edward
-    dialogueLine: Wanna ram into more pillars of light?
+    dialogueLine: Ok well we can't wrap our car around those pillars of light
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
   - characterName: Jovvy
-    dialogueLine: Nah, but I hear theres this exclusive group of racers. I say we
-      got a shot at joining. They got some crazy race tracks.
+    dialogueLine: Yeah they sorta just disapeared didn't they
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
   - characterName: Edward
-    dialogueLine: Alright, so lets join and race 'em.
+    dialogueLine: bro what are you saying, i was driving the car... I know...
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
   - characterName: Jovvy
-    dialogueLine: Woah so eager, we should probably practice a bit first. Race some
-      people on a straight forward course?
+    dialogueLine: Come on Edwardo im just trying to have a little conversation
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
   - characterName: Edward
-    dialogueLine: Yeah i guess... I'll round up some people to race.
+    dialogueLine: Listen bro, i think people are gathering around. I think they wanna
+      race!
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+  - characterName: Jovvy
+    dialogueLine: Yeah ok lets race these fools
+    charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}

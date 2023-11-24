@@ -2484,6 +2484,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6994566862108049495, guid: f3d2c370fcf92df45984363f81148be2, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994566862108049495, guid: f3d2c370fcf92df45984363f81148be2, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7318493784680575865, guid: f3d2c370fcf92df45984363f81148be2, type: 3}
       propertyPath: m_IsTrigger
       value: 0

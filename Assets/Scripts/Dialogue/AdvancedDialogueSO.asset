@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueEntries:
   - characterName: Jovvy
-    dialogueLine: Alright we made it into the big leagues.
+    dialogueLine: Nah, I think we took a wrong turn
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
   - characterName: Edward
-    dialogueLine: Well, can't say I didn't expect it but i guess we can celebrate.
+    dialogueLine: Watchu mean family, I think we are right where we need to be.
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
   - characterName: Jovvy
-    dialogueLine: No celebrating yet, check out that race course... look at those
-      different paths. We can't let our guards down.
+    dialogueLine: I don't know, theres a whole lot of turns and i don't know where
+      they go...
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
   - characterName: Edward
-    dialogueLine: Stop speaking like a nerd and get in the car
+    dialogueLine: Listen if you're so scared maybe you shouldn't have started racing
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
   - characterName: Jovvy
-    dialogueLine: C'mon man, I was just trying to-
+    dialogueLine: B-b-but what if we lose
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
   - characterName: Edward
-    dialogueLine: Yeah yeah, whatever man lets school these fools.
-    charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
+    dialogueLine: Nah, I'd win.
+    charPortrait: {fileID: 21300000, guid: 876b96530736173499591d4e9152331a, type: 3}

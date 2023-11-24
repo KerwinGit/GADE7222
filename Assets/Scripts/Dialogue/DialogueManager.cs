@@ -79,13 +79,16 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator TypeDialogue(string text) //helper hethod which types the dialogue to the ui
     {
-        continueBtn.interactable = false;       
+        continueBtn.interactable = false;
+
+        
 
         nameText.text = charName;
         dialogueText.text = "";
         portraitImage.sprite = charPortrait;
         foreach (char letter in text)
         {
+            SFXManager.Instance.PlayAudio("talk");
             dialogueText.text += letter;
             yield return new WaitForSeconds(0.05f); // Add a slight delay for typing effect
         }
