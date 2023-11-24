@@ -96,21 +96,19 @@ public class DialogueManager : MonoBehaviour
 
     public void ContinueClicked()//gets next dialogue or moves to new scene if dialogue queue is empty
     {
-        if(!dialogueQueue.IsEmpty())
+        if (!dialogueQueue.IsEmpty())
         {
             LoadDialogueData();
         }
         else
         {
-            currentScene = SceneManager.GetActiveScene();
-
-            switch(currentScene.buildIndex)
-            {
-                case 1: SceneManager.LoadScene(2); break;
-                case 3: SceneManager.LoadScene(4); break;
-                case 5: SceneManager.LoadScene(6); break;
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    public void SkipDialogue()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }

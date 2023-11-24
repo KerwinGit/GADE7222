@@ -25,7 +25,7 @@ MonoBehaviour:
     charPortrait: {fileID: 21300000, guid: 374e0a677ffe8ab489e0a84a73d03858, type: 3}
   - characterName: Bugbite Barry
     dialogueLine: Let's see if you can use those brains of yours on the racecourse
-      to outsmart the c!ompetition and cross the finish line first
+      to outsmart the competition and cross the finish line first!
     charPortrait: {fileID: 21300000, guid: 961cea11d2dc1364691c75c09f50fc5e, type: 3}
   - characterName: Ratflea Rick
     dialogueLine: BRAAAIIIINSS??
