@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,22 +13,30 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     private bool isPaused = false;
 
+    [SerializeField] private GameObject levelPanel;
+    [SerializeField] private GameObject creditsPanel;
+
+
     private void Update()
     {
-        if (checkpointManager!=null)
+        try
         {
-            if (Keyboard.current.escapeKey.wasPressedThisFrame && !checkpointManager.isFinished)
+            if (checkpointManager != null)
             {
-                TogglePause();
+                if (Keyboard.current.escapeKey.wasPressedThisFrame && !checkpointManager.isFinished)
+                {
+                    TogglePause();
+                }
+            }
+            else
+            {
+                if (Keyboard.current.escapeKey.wasPressedThisFrame)
+                {
+                    TogglePause();
+                }
             }
         }
-        else
-        {
-            if (Keyboard.current.escapeKey.wasPressedThisFrame)
-            {
-                TogglePause();
-            }
-        }
+        catch (Exception e){ Debug.Log(e); }
         
     }
     public void LoadCheckpointRace()
@@ -75,6 +84,26 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void ShowLevelSelect()
+    {
+        levelPanel.SetActive(true);
+    }
+
+    public void HideLevelSelect()
+    {
+        levelPanel.SetActive(false);
+    }
+
+    public void ShowCredits()
+    {
+        creditsPanel.SetActive(true);
+    }
+
+    public void HideCredits()
+    {
+        creditsPanel.SetActive(false);
+    }
+
     private void PauseGame()
     {
         Time.timeScale = 0f;
@@ -83,5 +112,10 @@ public class MenuManager : MonoBehaviour
     private void ResumeGame()
     {
         Time.timeScale = 1f;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
