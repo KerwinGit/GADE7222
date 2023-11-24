@@ -15,6 +15,9 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private GameObject levelPanel;
     [SerializeField] private GameObject creditsPanel;
+    [SerializeField] private GameObject modelsPanel;
+    [SerializeField] private GameObject audioPanel;
+    [SerializeField] private GameObject spritesPanel;
 
 
     private void Update()
@@ -102,6 +105,36 @@ public class MenuManager : MonoBehaviour
     public void HideCredits()
     {
         creditsPanel.SetActive(false);
+    }
+
+    public void Show3DCred()
+    {
+        modelsPanel.SetActive(true);
+    }
+
+    public void Hide3DCred()
+    {
+        modelsPanel.SetActive(false);
+    }
+
+    public void ShowAudioCred()
+    {
+        audioPanel.SetActive(true);
+    }
+
+    public void HideAudioCred()
+    {
+        audioPanel.SetActive(false);
+    }
+
+    public void Show2DCred()
+    {
+        spritesPanel.SetActive(true);
+    }
+
+    public void Hide2DCred()
+    {
+        spritesPanel.SetActive(false);
     }
 
     private void PauseGame()
