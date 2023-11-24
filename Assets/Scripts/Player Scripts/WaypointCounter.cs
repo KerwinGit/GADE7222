@@ -25,10 +25,11 @@ public class WaypointCounter : MonoBehaviour
         {
             canLap = true;
         }
-        if (other.gameObject.name.Equals("LapCounter") && canLap)
+        if (other.gameObject.name.Equals("LapCounter") && canLap && this.gameObject.name.Equals("Car"))
         {
             lapCount++;
             canLap = false;
+            SFXManager.Instance.PlayAudio("Fruit collect 1");
         }
     }
 }
