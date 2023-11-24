@@ -12,18 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/CheckPointRaceDialogue.unity
     guid: ae10122c37919bf469f7da4b16cf01a0
   - enabled: 1
-    path: Assets/Scenes/Checkpoint Race.unity
-    guid: 24e475dd128b7bb4eb3aafb2630ad2a0
+    path: Assets/Scenes/New Checkpoint Race.unity
+    guid: 23f36640dc1bc6844a934229f3e0e095
   - enabled: 1
     path: Assets/Scenes/BeginnerRaceDialogue.unity
     guid: c4818e118a4ad6749a7aa82808d5bb5f
   - enabled: 1
-    path: Assets/Scenes/Beginner Race.unity
-    guid: 14b8bc120f22ae842864243043c9cd89
+    path: Assets/Scenes/New Beginner Race.unity
+    guid: 8c03ede3c6d564243973a1a904a625af
   - enabled: 1
     path: Assets/Scenes/AdvancedRaceDialogue.unity
     guid: 17c4850233f16a94ca113876c1c1fce3
   - enabled: 1
-    path: Assets/Scenes/Advanced Race.unity
-    guid: 1373d4b92b55b024784aba6748232251
+    path: Assets/Scenes/New Advanced Race.unity
+    guid: 49cb6459e5dd6924ca1bc9c05f757897
   m_configObjects: {}

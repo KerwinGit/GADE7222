@@ -19,8 +19,8 @@ public class CheckpointManager : MonoBehaviour
 
     [Header("Timer")]
     [SerializeField] private TMP_Text timerText;
-    private float totalTime = 30f;
-    private float timeToAdd = 3f;
+    private float totalTime = 20f;
+    private float timeToAdd = 2f;
     private float remainingTime;    
 
     private void Start()
